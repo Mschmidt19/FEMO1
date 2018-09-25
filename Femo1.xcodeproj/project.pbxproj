@@ -1,0 +1,595 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3BBFD10D215A3DF600CC1D2F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBFD10C215A3DF600CC1D2F /* AppDelegate.swift */; };
+		3BBFD10F215A3DF600CC1D2F /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3BBFD10E215A3DF600CC1D2F /* GameScene.sks */; };
+		3BBFD111215A3DF600CC1D2F /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3BBFD110215A3DF600CC1D2F /* Actions.sks */; };
+		3BBFD113215A3DF600CC1D2F /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBFD112215A3DF600CC1D2F /* GameScene.swift */; };
+		3BBFD115215A3DF600CC1D2F /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBFD114215A3DF600CC1D2F /* GameViewController.swift */; };
+		3BBFD118215A3DF600CC1D2F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BBFD116215A3DF600CC1D2F /* Main.storyboard */; };
+		3BBFD11A215A3DF700CC1D2F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3BBFD119215A3DF700CC1D2F /* Assets.xcassets */; };
+		3BBFD11D215A3DF700CC1D2F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BBFD11B215A3DF700CC1D2F /* LaunchScreen.storyboard */; };
+		3BBFD128215A3DF700CC1D2F /* Femo1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBFD127215A3DF700CC1D2F /* Femo1Tests.swift */; };
+		3BBFD133215A3DF700CC1D2F /* Femo1UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBFD132215A3DF700CC1D2F /* Femo1UITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3BBFD124215A3DF700CC1D2F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3BBFD101215A3DF600CC1D2F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3BBFD108215A3DF600CC1D2F;
+			remoteInfo = Femo1;
+		};
+		3BBFD12F215A3DF700CC1D2F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3BBFD101215A3DF600CC1D2F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3BBFD108215A3DF600CC1D2F;
+			remoteInfo = Femo1;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3BBFD109215A3DF600CC1D2F /* Femo1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Femo1.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3BBFD10C215A3DF600CC1D2F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3BBFD10E215A3DF600CC1D2F /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		3BBFD110215A3DF600CC1D2F /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
+		3BBFD112215A3DF600CC1D2F /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		3BBFD114215A3DF600CC1D2F /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		3BBFD117215A3DF600CC1D2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3BBFD119215A3DF700CC1D2F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3BBFD11C215A3DF700CC1D2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3BBFD11E215A3DF700CC1D2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3BBFD123215A3DF700CC1D2F /* Femo1Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Femo1Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3BBFD127215A3DF700CC1D2F /* Femo1Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Femo1Tests.swift; sourceTree = "<group>"; };
+		3BBFD129215A3DF700CC1D2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3BBFD12E215A3DF700CC1D2F /* Femo1UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Femo1UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3BBFD132215A3DF700CC1D2F /* Femo1UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Femo1UITests.swift; sourceTree = "<group>"; };
+		3BBFD134215A3DF700CC1D2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3BBFD106215A3DF600CC1D2F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3BBFD120215A3DF700CC1D2F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3BBFD12B215A3DF700CC1D2F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3BBFD100215A3DF600CC1D2F = {
+			isa = PBXGroup;
+			children = (
+				3BBFD10B215A3DF600CC1D2F /* Femo1 */,
+				3BBFD126215A3DF700CC1D2F /* Femo1Tests */,
+				3BBFD131215A3DF700CC1D2F /* Femo1UITests */,
+				3BBFD10A215A3DF600CC1D2F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3BBFD10A215A3DF600CC1D2F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3BBFD109215A3DF600CC1D2F /* Femo1.app */,
+				3BBFD123215A3DF700CC1D2F /* Femo1Tests.xctest */,
+				3BBFD12E215A3DF700CC1D2F /* Femo1UITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3BBFD10B215A3DF600CC1D2F /* Femo1 */ = {
+			isa = PBXGroup;
+			children = (
+				3BBFD10C215A3DF600CC1D2F /* AppDelegate.swift */,
+				3BBFD10E215A3DF600CC1D2F /* GameScene.sks */,
+				3BBFD110215A3DF600CC1D2F /* Actions.sks */,
+				3BBFD112215A3DF600CC1D2F /* GameScene.swift */,
+				3BBFD114215A3DF600CC1D2F /* GameViewController.swift */,
+				3BBFD116215A3DF600CC1D2F /* Main.storyboard */,
+				3BBFD119215A3DF700CC1D2F /* Assets.xcassets */,
+				3BBFD11B215A3DF700CC1D2F /* LaunchScreen.storyboard */,
+				3BBFD11E215A3DF700CC1D2F /* Info.plist */,
+			);
+			path = Femo1;
+			sourceTree = "<group>";
+		};
+		3BBFD126215A3DF700CC1D2F /* Femo1Tests */ = {
+			isa = PBXGroup;
+			children = (
+				3BBFD127215A3DF700CC1D2F /* Femo1Tests.swift */,
+				3BBFD129215A3DF700CC1D2F /* Info.plist */,
+			);
+			path = Femo1Tests;
+			sourceTree = "<group>";
+		};
+		3BBFD131215A3DF700CC1D2F /* Femo1UITests */ = {
+			isa = PBXGroup;
+			children = (
+				3BBFD132215A3DF700CC1D2F /* Femo1UITests.swift */,
+				3BBFD134215A3DF700CC1D2F /* Info.plist */,
+			);
+			path = Femo1UITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3BBFD108215A3DF600CC1D2F /* Femo1 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3BBFD137215A3DF700CC1D2F /* Build configuration list for PBXNativeTarget "Femo1" */;
+			buildPhases = (
+				3BBFD105215A3DF600CC1D2F /* Sources */,
+				3BBFD106215A3DF600CC1D2F /* Frameworks */,
+				3BBFD107215A3DF600CC1D2F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Femo1;
+			productName = Femo1;
+			productReference = 3BBFD109215A3DF600CC1D2F /* Femo1.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3BBFD122215A3DF700CC1D2F /* Femo1Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3BBFD13A215A3DF700CC1D2F /* Build configuration list for PBXNativeTarget "Femo1Tests" */;
+			buildPhases = (
+				3BBFD11F215A3DF700CC1D2F /* Sources */,
+				3BBFD120215A3DF700CC1D2F /* Frameworks */,
+				3BBFD121215A3DF700CC1D2F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3BBFD125215A3DF700CC1D2F /* PBXTargetDependency */,
+			);
+			name = Femo1Tests;
+			productName = Femo1Tests;
+			productReference = 3BBFD123215A3DF700CC1D2F /* Femo1Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		3BBFD12D215A3DF700CC1D2F /* Femo1UITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3BBFD13D215A3DF700CC1D2F /* Build configuration list for PBXNativeTarget "Femo1UITests" */;
+			buildPhases = (
+				3BBFD12A215A3DF700CC1D2F /* Sources */,
+				3BBFD12B215A3DF700CC1D2F /* Frameworks */,
+				3BBFD12C215A3DF700CC1D2F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3BBFD130215A3DF700CC1D2F /* PBXTargetDependency */,
+			);
+			name = Femo1UITests;
+			productName = Femo1UITests;
+			productReference = 3BBFD12E215A3DF700CC1D2F /* Femo1UITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3BBFD101215A3DF600CC1D2F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0940;
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = "FEMO@Makers";
+				TargetAttributes = {
+					3BBFD108215A3DF600CC1D2F = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+					3BBFD122215A3DF700CC1D2F = {
+						CreatedOnToolsVersion = 9.4.1;
+						TestTargetID = 3BBFD108215A3DF600CC1D2F;
+					};
+					3BBFD12D215A3DF700CC1D2F = {
+						CreatedOnToolsVersion = 9.4.1;
+						TestTargetID = 3BBFD108215A3DF600CC1D2F;
+					};
+				};
+			};
+			buildConfigurationList = 3BBFD104215A3DF600CC1D2F /* Build configuration list for PBXProject "Femo1" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3BBFD100215A3DF600CC1D2F;
+			productRefGroup = 3BBFD10A215A3DF600CC1D2F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3BBFD108215A3DF600CC1D2F /* Femo1 */,
+				3BBFD122215A3DF700CC1D2F /* Femo1Tests */,
+				3BBFD12D215A3DF700CC1D2F /* Femo1UITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3BBFD107215A3DF600CC1D2F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3BBFD118215A3DF600CC1D2F /* Main.storyboard in Resources */,
+				3BBFD10F215A3DF600CC1D2F /* GameScene.sks in Resources */,
+				3BBFD11A215A3DF700CC1D2F /* Assets.xcassets in Resources */,
+				3BBFD11D215A3DF700CC1D2F /* LaunchScreen.storyboard in Resources */,
+				3BBFD111215A3DF600CC1D2F /* Actions.sks in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3BBFD121215A3DF700CC1D2F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3BBFD12C215A3DF700CC1D2F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3BBFD105215A3DF600CC1D2F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3BBFD113215A3DF600CC1D2F /* GameScene.swift in Sources */,
+				3BBFD115215A3DF600CC1D2F /* GameViewController.swift in Sources */,
+				3BBFD10D215A3DF600CC1D2F /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3BBFD11F215A3DF700CC1D2F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3BBFD128215A3DF700CC1D2F /* Femo1Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3BBFD12A215A3DF700CC1D2F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3BBFD133215A3DF700CC1D2F /* Femo1UITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3BBFD125215A3DF700CC1D2F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3BBFD108215A3DF600CC1D2F /* Femo1 */;
+			targetProxy = 3BBFD124215A3DF700CC1D2F /* PBXContainerItemProxy */;
+		};
+		3BBFD130215A3DF700CC1D2F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3BBFD108215A3DF600CC1D2F /* Femo1 */;
+			targetProxy = 3BBFD12F215A3DF700CC1D2F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3BBFD116215A3DF600CC1D2F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3BBFD117215A3DF600CC1D2F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3BBFD11B215A3DF700CC1D2F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3BBFD11C215A3DF700CC1D2F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3BBFD135215A3DF700CC1D2F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3BBFD136215A3DF700CC1D2F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3BBFD138215A3DF700CC1D2F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Femo1/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.femo.Femo1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3BBFD139215A3DF700CC1D2F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Femo1/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.femo.Femo1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		3BBFD13B215A3DF700CC1D2F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Femo1Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.femo.Femo1Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Femo1.app/Femo1";
+			};
+			name = Debug;
+		};
+		3BBFD13C215A3DF700CC1D2F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Femo1Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.femo.Femo1Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Femo1.app/Femo1";
+			};
+			name = Release;
+		};
+		3BBFD13E215A3DF700CC1D2F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Femo1UITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.femo.Femo1UITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Femo1;
+			};
+			name = Debug;
+		};
+		3BBFD13F215A3DF700CC1D2F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Femo1UITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.femo.Femo1UITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Femo1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3BBFD104215A3DF600CC1D2F /* Build configuration list for PBXProject "Femo1" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3BBFD135215A3DF700CC1D2F /* Debug */,
+				3BBFD136215A3DF700CC1D2F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3BBFD137215A3DF700CC1D2F /* Build configuration list for PBXNativeTarget "Femo1" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3BBFD138215A3DF700CC1D2F /* Debug */,
+				3BBFD139215A3DF700CC1D2F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3BBFD13A215A3DF700CC1D2F /* Build configuration list for PBXNativeTarget "Femo1Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3BBFD13B215A3DF700CC1D2F /* Debug */,
+				3BBFD13C215A3DF700CC1D2F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3BBFD13D215A3DF700CC1D2F /* Build configuration list for PBXNativeTarget "Femo1UITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3BBFD13E215A3DF700CC1D2F /* Debug */,
+				3BBFD13F215A3DF700CC1D2F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3BBFD101215A3DF600CC1D2F /* Project object */;
+}
