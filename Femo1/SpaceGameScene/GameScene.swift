@@ -111,6 +111,7 @@ class GameScene: SKScene {
         menu_buttonNode.texture = SKTexture(imageNamed: "menu_button")
         InformationNode = (self.childNode(withName: "Information_button") as! SKSpriteNode)
         InformationNode.texture = SKTexture(imageNamed: "information_button")
+        
         indexOfLastTile = (tilesArray?.index{$0 === tilesArray?.last})!
 
         dieRollLabel = (self.childNode(withName: "dieRollLabel") as! SKLabelNode)
@@ -169,7 +170,7 @@ class GameScene: SKScene {
             computer.run(moveAction, completion: {
                 self.computerMovingToTile = false
             })
-            currentTile += 1
+            currentTileComputer += 1
             
             self.run(moveSound)
         }
@@ -184,8 +185,8 @@ class GameScene: SKScene {
         }
     }
 
-    func displayDieRollWithTimer() {
-        dieRollLabel.text = "You rolled a \(dieRoll)"
+    func displayDieRollWithTimer(name: String) {
+        dieRollLabel.text = "\(name) rolled a \(dieRoll)"
         DispatchQueue.main.asyncAfter(deadline: .now() + textDisappearTimer) {
             self.dieRollLabel.text = ""
         }
@@ -212,11 +213,27 @@ class GameScene: SKScene {
 
     func playTurn() {
         rollDie()
-        displayDieRollWithTimer()
+        displayDieRollWithTimer(name: "You")
         var delayAdder = moveDuration
         for _ in 1 ... dieRoll {
             DispatchQueue.main.asyncAfter(deadline: .now() + delayAdder) {
                 self.moveToNextTile()
+            }
+            delayAdder += moveDuration
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + delayAdder + 1.0) {
+            self.playComputerTurn()
+        }
+    }
+    
+    func playComputerTurn() {
+        rollDie()
+        displayDieRollWithTimer(name: "Computer")
+        var delayAdder = moveDuration
+        for _ in 1 ... dieRoll {
+            print(delayAdder)
+            DispatchQueue.main.asyncAfter(deadline: .now() + delayAdder) {
+                self.moveComputerToNextTile()
             }
             delayAdder += moveDuration
         }
@@ -258,7 +275,9 @@ class GameScene: SKScene {
             let node = self.nodes(at: location).first
 
             if node?.name == "nextTileButton" {
-                askQuestion()
+                if !userDefaults.bool(forKey: "turnInProgress") {
+                   askQuestion()
+                }
             } else if node?.name == "resetDefaults" {
                 resetGameState()
             } else if node?.name == "Menu_button" {
@@ -293,11 +312,16 @@ class GameScene: SKScene {
         currentTile = 0
         player1?.position = CGPoint(x: tilesArray!.first!.position.x, y: tilesArray!.first!.position.y + 15)
         player1?.xScale = 1
+        currentTileComputer = 0
+        computer?.position = CGPoint(x: tilesArray!.first!.position.x, y: tilesArray!.first!.position.y + 15)
+        computer?.xScale = 1
     }
 
     func saveGameState() {
         userDefaults.set(currentTile, forKey: "currentTile")
+        userDefaults.set(currentTileComputer, forKey:"currentTileComputer")
         userDefaults.set(player1?.xScale, forKey: "playerXScale")
+        userDefaults.set(computer?.xScale, forKey: "computerXScale")
     }
 
     func isKeyPresentInUserDefaults(key: String) -> Bool {

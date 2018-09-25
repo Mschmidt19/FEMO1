@@ -21,13 +21,13 @@
 		EA10696C215A4BB100088C45 /* QuestionScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = EA10694E215A4BAF00088C45 /* QuestionScene.sks */; };
 		EA10696E215A4BB100088C45 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = EA106953215A4BAF00088C45 /* GameScene.sks */; };
 		EA10696F215A4BB100088C45 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA106954215A4BAF00088C45 /* GameScene.swift */; };
-		EA106970215A4BB100088C45 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA106956215A4BAF00088C45 /* LaunchScreen.storyboard */; };
-		EA106972215A4BB100088C45 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA10695A215A4BAF00088C45 /* Main.storyboard */; };
 		EA106973215A4BB100088C45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA10695C215A4BB000088C45 /* Assets.xcassets */; };
 		EA106974215A4BB100088C45 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = EA10695D215A4BB000088C45 /* Actions.sks */; };
 		EA106975215A4BB100088C45 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA10695E215A4BB000088C45 /* GameViewController.swift */; };
 		EA106976215A4BB100088C45 /* Starfield.sks in Resources */ = {isa = PBXBuildFile; fileRef = EA10695F215A4BB000088C45 /* Starfield.sks */; };
 		EA106977215A4BB100088C45 /* QuestionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA106960215A4BB100088C45 /* QuestionList.swift */; };
+		EA88C097215A69DF0025B334 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA88C093215A69DF0025B334 /* LaunchScreen.storyboard */; };
+		EA88C098215A69DF0025B334 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA88C095215A69DF0025B334 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,13 +69,13 @@
 		EA10694E215A4BAF00088C45 /* QuestionScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = QuestionScene.sks; sourceTree = "<group>"; };
 		EA106953215A4BAF00088C45 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		EA106954215A4BAF00088C45 /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
-		EA106957215A4BAF00088C45 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		EA10695B215A4BAF00088C45 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Main.storyboard; sourceTree = "<group>"; };
 		EA10695C215A4BB000088C45 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EA10695D215A4BB000088C45 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
 		EA10695E215A4BB000088C45 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		EA10695F215A4BB000088C45 /* Starfield.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Starfield.sks; sourceTree = "<group>"; };
 		EA106960215A4BB100088C45 /* QuestionList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionList.swift; sourceTree = "<group>"; };
+		EA88C094215A69DF0025B334 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EA88C096215A69DF0025B334 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,12 +126,12 @@
 		3BBFD10B215A3DF600CC1D2F /* Femo1 */ = {
 			isa = PBXGroup;
 			children = (
+				EA10695E215A4BB000088C45 /* GameViewController.swift */,
 				EA10695D215A4BB000088C45 /* Actions.sks */,
 				EA10693F215A4BAE00088C45 /* AppDelegate.swift */,
 				EA10695F215A4BB000088C45 /* Starfield.sks */,
-				EA10695E215A4BB000088C45 /* GameViewController.swift */,
 				EA10695C215A4BB000088C45 /* Assets.xcassets */,
-				EA106955215A4BAF00088C45 /* Base.lproj */,
+				EA88C092215A69DF0025B334 /* Base.lproj */,
 				EA106940215A4BAE00088C45 /* Main_Page */,
 				EA106944215A4BAE00088C45 /* Information_Page */,
 				EA10694C215A4BAF00088C45 /* QuestionScene */,
@@ -207,16 +207,6 @@
 			path = SpaceGameScene;
 			sourceTree = "<group>";
 		};
-		EA106955215A4BAF00088C45 /* Base.lproj */ = {
-			isa = PBXGroup;
-			children = (
-				EA106956215A4BAF00088C45 /* LaunchScreen.storyboard */,
-				EA10695A215A4BAF00088C45 /* Main.storyboard */,
-			);
-			name = Base.lproj;
-			path = ../../FEMO/FEMO/Base.lproj;
-			sourceTree = "<group>";
-		};
 		EA106978215A4CE400088C45 /* QuestionClasses */ = {
 			isa = PBXGroup;
 			children = (
@@ -224,6 +214,15 @@
 				EA106960215A4BB100088C45 /* QuestionList.swift */,
 			);
 			path = QuestionClasses;
+			sourceTree = "<group>";
+		};
+		EA88C092215A69DF0025B334 /* Base.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				EA88C093215A69DF0025B334 /* LaunchScreen.storyboard */,
+				EA88C095215A69DF0025B334 /* Main.storyboard */,
+			);
+			path = Base.lproj;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -333,11 +332,11 @@
 			files = (
 				EA106976215A4BB100088C45 /* Starfield.sks in Resources */,
 				84B3E93C215A532B000C6779 /* Main_page.sks in Resources */,
-				EA106970215A4BB100088C45 /* LaunchScreen.storyboard in Resources */,
 				EA106969215A4BB100088C45 /* tap.wav in Resources */,
+				EA88C097215A69DF0025B334 /* LaunchScreen.storyboard in Resources */,
 				84B3E93E215A5351000C6779 /* Information.sks in Resources */,
+				EA88C098215A69DF0025B334 /* Main.storyboard in Resources */,
 				EA10696A215A4BB100088C45 /* Ta Da-Sound.wav in Resources */,
-				EA106972215A4BB100088C45 /* Main.storyboard in Resources */,
 				EA10696E215A4BB100088C45 /* GameScene.sks in Resources */,
 				EA106974215A4BB100088C45 /* Actions.sks in Resources */,
 				EA10696C215A4BB100088C45 /* QuestionScene.sks in Resources */,
@@ -409,18 +408,18 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		EA106956215A4BAF00088C45 /* LaunchScreen.storyboard */ = {
+		EA88C093215A69DF0025B334 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				EA106957215A4BAF00088C45 /* Base */,
+				EA88C094215A69DF0025B334 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
-		EA10695A215A4BAF00088C45 /* Main.storyboard */ = {
+		EA88C095215A69DF0025B334 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				EA10695B215A4BAF00088C45 /* Base */,
+				EA88C096215A69DF0025B334 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
