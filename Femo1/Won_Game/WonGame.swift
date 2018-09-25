@@ -11,8 +11,11 @@ import GameplayKit
 
 class WonGame: SKScene {
     var celebration:SKEmitterNode!
+    var newGameNode: SKSpriteNode!
     
     override func didMove(to view: SKView) {
+        _ = self.childNode(withName: "NewGame") as! SKSpriteNode
+
         celebration = SKEmitterNode(fileNamed: "celebration")
         celebration.position = CGPoint(x:160, y:320)
         self.addChild(celebration)
@@ -20,4 +23,20 @@ class WonGame: SKScene {
     }
     
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let touch = touches.first
+        
+        if let location = touch?.location(in: self) {
+            let node = self.nodes(at: location)
+            
+            if node.first?.name == "NewGame" {
+                let transition = SKTransition.doorsCloseHorizontal(withDuration: 0.5)
+                let menuPage = Main_page(fileNamed: "Main_page")
+                self.view?.presentScene(menuPage!, transition: transition)
+            }
+        }
+    }
+    
 }
+
+
