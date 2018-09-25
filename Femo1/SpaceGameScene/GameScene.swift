@@ -287,6 +287,12 @@ class GameScene: SKScene {
             }
         }
     }
+    
+    func wonGame() {
+        let transition = SKTransition.flipVertical(withDuration: 0.5)
+        let wongame = WonGame(fileNamed: "WonGame")
+        self.view?.presentScene(wongame!, transition: transition)
+    }
 
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         if !movingToTile {
