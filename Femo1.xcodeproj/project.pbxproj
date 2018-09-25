@@ -192,8 +192,8 @@
 			isa = PBXGroup;
 			children = (
 				EA106978215A4CE400088C45 /* QuestionClasses */,
-				EA10694D215A4BAF00088C45 /* QuestionScene.swift */,
 				EA10694E215A4BAF00088C45 /* QuestionScene.sks */,
+				EA10694D215A4BAF00088C45 /* QuestionScene.swift */,
 			);
 			path = QuestionScene;
 			sourceTree = "<group>";

@@ -13,6 +13,7 @@ class QuestionScene: SKScene {
     let userDefaults = UserDefaults.standard
     
     var questionList = [Question]()
+    var questionOrderArray = [Int]()
     var currentQuestion = 0
     
     var starField: SKEmitterNode!
@@ -54,6 +55,12 @@ class QuestionScene: SKScene {
             questionList = questionListFromClass
         }
         
+        if isKeyPresentInUserDefaults(key: "questionOrderArray") {
+            questionOrderArray = userDefaults.array(forKey: "questionOrderArray") as! [Int]
+        } else {
+            createQuestionOrderArray()
+        }
+        
         if isKeyPresentInUserDefaults(key: "currentQuestion") {
             currentQuestion = userDefaults.integer(forKey: "currentQuestion")
         } else {
@@ -67,11 +74,11 @@ class QuestionScene: SKScene {
 //            print(questionList[i].question)
 //        }
         
-        questionText.text = questionList[currentQuestion % questionCount].question
-        button1Text.text = questionList[currentQuestion % questionCount].optionA
-        button2Text.text = questionList[currentQuestion % questionCount].optionB
-        button3Text.text = questionList[currentQuestion % questionCount].optionC
-        button4Text.text = questionList[currentQuestion % questionCount].optionD
+        questionText.text = (questionList[questionOrderArray[currentQuestion % questionCount]].question)
+        button1Text.text = (questionList[questionOrderArray[currentQuestion % questionCount]].optionA)
+        button2Text.text = (questionList[questionOrderArray[currentQuestion % questionCount]].optionB)
+        button3Text.text = (questionList[questionOrderArray[currentQuestion % questionCount]].optionC)
+        button4Text.text = (questionList[questionOrderArray[currentQuestion % questionCount]].optionD)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -88,6 +95,15 @@ class QuestionScene: SKScene {
         
     }
     
+    func createQuestionOrderArray() {
+        var tempArray = [Int]()
+        for i in 0...questionList.count-1 {
+            tempArray.append(i)
+        }
+        tempArray.shuffle()
+        questionOrderArray = tempArray
+    }
+    
     func presentSpaceBoard() {
         let transition = SKTransition.reveal(with: .up, duration: 0.5)
         
@@ -100,14 +116,14 @@ class QuestionScene: SKScene {
     }
     
     func saveGameState() {
-//        userDefaults.set(questionList, forKey: "questionList")
         userDefaults.set(currentQuestion, forKey: "currentQuestion")
+        userDefaults.set(questionOrderArray, forKey: "questionOrderArray")
     }
     
     func answerButtonPressed(node: SKNode) {
         let questionCount = questionList.count
         let tag = ((node.userData!.object(forKey: "tag")!) as! Int)
-        if tag == questionList[currentQuestion % questionCount].correctAnswer {
+        if tag == (questionList[questionOrderArray[currentQuestion % questionCount]].correctAnswer) {
             userDefaults.set(true, forKey: "lastAnswerCorrect")
         } else {
             userDefaults.set(false, forKey: "lastAnswerCorrect")

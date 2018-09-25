@@ -122,6 +122,8 @@ class GameScene: SKScene {
 
         if canPlayTurn() {
             playTurn()
+        } else if userDefaults.bool(forKey: "turnInProgress"){
+            playComputerTurn()
         }
 
     }
@@ -229,7 +231,6 @@ class GameScene: SKScene {
         displayDieRollWithTimer(name: "Computer")
         var delayAdder = moveDuration
         for _ in 1 ... dieRoll {
-            print(delayAdder)
             DispatchQueue.main.asyncAfter(deadline: .now() + delayAdder) {
                 self.moveComputerToNextTile()
             }
