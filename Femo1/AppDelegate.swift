@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  Femo1
+//  FEMO
 //
-//  Created by Farah Jabri on 25/09/2018.
+//  Created by Farah Jabri on 19/09/2018.
 //  Copyright © 2018 FEMO@Makers. All rights reserved.
 //
 
