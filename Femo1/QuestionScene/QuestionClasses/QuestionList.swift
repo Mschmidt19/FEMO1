@@ -12,15 +12,16 @@ class QuestionList {
     var list = [Question]()
     
     init() {
-        list.append(Question(questionText: "Question1", choiceA: "String1", choiceB: "String2", choiceC: "String3", choiceD: "String4", answer: 1))
+        list.append(Question(questionText: "What is TDD short for?", choiceA: "Test Development Driven", choiceB: "Testing Drive Develop", choiceC: "Test Driven Development", choiceD: "Testing Drunk Drivers", answer: 3))
         
-        list.append(Question(questionText: "Question2", choiceA: "String5", choiceB: "String6", choiceC: "String7", choiceD: "String8", answer: 2))
+        list.append(Question(questionText: "What is TDD short for?", choiceA: "Don't Repeat Yourself", choiceB: "Do Repeat Yourself", choiceC: "Do Really Yell", choiceD: "Don't React Yodelling", answer: 1))
         
-        list.append(Question(questionText: "Question3", choiceA: "String9", choiceB: "String10", choiceC: "String11", choiceD: "String12", answer: 3))
+        list.append(Question(questionText: "Which of the following is an example of an instance variable in Ruby?", choiceA: "<drink>", choiceB: "Class drink", choiceC: "@@drink", choiceD: "@drink ", answer: 4))
         
-        list.append(Question(questionText: "Question4", choiceA: "String13", choiceB: "String14", choiceC: "String15", choiceD: "String16", answer: 4))
+        list.append(Question(questionText: "Which is the oldest coding language?", choiceA: "Java", choiceB: "Perl", choiceC: "Erlang", choiceD: "C++", answer: 4))
         
+        list.append(Question(questionText: "Which statement is typically the first program newbies write?", choiceA: "Goodbye, Planet!", choiceB: "Hello, Galaxy", choiceC: "Hello, World!", choiceD: "Goodbye, Universe!", answer: 3))
         
-//        list = list.shuffled()
+
     }
 }
