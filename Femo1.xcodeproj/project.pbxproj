@@ -22,7 +22,6 @@
 		EA10696E215A4BB100088C45 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = EA106953215A4BAF00088C45 /* GameScene.sks */; };
 		EA10696F215A4BB100088C45 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA106954215A4BAF00088C45 /* GameScene.swift */; };
 		EA106970215A4BB100088C45 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA106956215A4BAF00088C45 /* LaunchScreen.storyboard */; };
-		EA106971215A4BB100088C45 /* QuestionPopupViewController~.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA106958215A4BAF00088C45 /* QuestionPopupViewController~.storyboard */; };
 		EA106972215A4BB100088C45 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA10695A215A4BAF00088C45 /* Main.storyboard */; };
 		EA106973215A4BB100088C45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA10695C215A4BB000088C45 /* Assets.xcassets */; };
 		EA106974215A4BB100088C45 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = EA10695D215A4BB000088C45 /* Actions.sks */; };
@@ -71,7 +70,6 @@
 		EA106953215A4BAF00088C45 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		EA106954215A4BAF00088C45 /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		EA106957215A4BAF00088C45 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		EA106959215A4BAF00088C45 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "QuestionPopupViewController~.storyboard"; sourceTree = "<group>"; };
 		EA10695B215A4BAF00088C45 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Main.storyboard; sourceTree = "<group>"; };
 		EA10695C215A4BB000088C45 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EA10695D215A4BB000088C45 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
@@ -213,7 +211,6 @@
 			isa = PBXGroup;
 			children = (
 				EA106956215A4BAF00088C45 /* LaunchScreen.storyboard */,
-				EA106958215A4BAF00088C45 /* QuestionPopupViewController~.storyboard */,
 				EA10695A215A4BAF00088C45 /* Main.storyboard */,
 			);
 			name = Base.lproj;
@@ -343,7 +340,6 @@
 				EA10696E215A4BB100088C45 /* GameScene.sks in Resources */,
 				EA106974215A4BB100088C45 /* Actions.sks in Resources */,
 				EA106963215A4BB100088C45 /* Main_page.sks in Resources */,
-				EA106971215A4BB100088C45 /* QuestionPopupViewController~.storyboard in Resources */,
 				EA10696C215A4BB100088C45 /* QuestionScene.sks in Resources */,
 				EA106973215A4BB100088C45 /* Assets.xcassets in Resources */,
 			);
@@ -419,14 +415,6 @@
 				EA106957215A4BAF00088C45 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		EA106958215A4BAF00088C45 /* QuestionPopupViewController~.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				EA106959215A4BAF00088C45 /* Base */,
-			);
-			name = "QuestionPopupViewController~.storyboard";
 			sourceTree = "<group>";
 		};
 		EA10695A215A4BAF00088C45 /* Main.storyboard */ = {
