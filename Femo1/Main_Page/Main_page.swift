@@ -10,6 +10,7 @@ import SpriteKit
 
 class Main_page: SKScene {
 
+    let userDefaults = UserDefaults.standard
     var Space_sceneNode: SKSpriteNode!
     var Desert_sceneNode: SKSpriteNode!
     
@@ -27,6 +28,7 @@ class Main_page: SKScene {
         if let location = touch?.location(in: self) {
            let node = self.nodes(at: location).first
             if node?.name  == "Space_scene" || node?.name == "SpaceText" {
+                userDefaults.set(false, forKey: "turnInProgress")
                 let transition = SKTransition.doorsOpenHorizontal(withDuration: 0.5)
                 let gameScene = GameScene(fileNamed: "GameScene")
                 self.view?.presentScene(gameScene!, transition: transition)
