@@ -9,10 +9,10 @@
 /* Begin PBXBuildFile section */
 		3BBFD128215A3DF700CC1D2F /* Femo1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBFD127215A3DF700CC1D2F /* Femo1Tests.swift */; };
 		3BBFD133215A3DF700CC1D2F /* Femo1UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BBFD132215A3DF700CC1D2F /* Femo1UITests.swift */; };
+		84B3E93C215A532B000C6779 /* Main_page.sks in Resources */ = {isa = PBXBuildFile; fileRef = 84B3E93B215A532B000C6779 /* Main_page.sks */; };
+		84B3E93E215A5351000C6779 /* Information.sks in Resources */ = {isa = PBXBuildFile; fileRef = 84B3E93D215A5351000C6779 /* Information.sks */; };
 		EA106961215A4BB100088C45 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA10693F215A4BAE00088C45 /* AppDelegate.swift */; };
 		EA106962215A4BB100088C45 /* Main_page.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA106941215A4BAE00088C45 /* Main_page.swift */; };
-		EA106963215A4BB100088C45 /* Main_page.sks in Resources */ = {isa = PBXBuildFile; fileRef = EA106942215A4BAE00088C45 /* Main_page.sks */; };
-		EA106965215A4BB100088C45 /* Information.sks in Resources */ = {isa = PBXBuildFile; fileRef = EA106945215A4BAE00088C45 /* Information.sks */; };
 		EA106966215A4BB100088C45 /* InformationScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA106946215A4BAE00088C45 /* InformationScene.swift */; };
 		EA106968215A4BB100088C45 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA106948215A4BAE00088C45 /* Question.swift */; };
 		EA106969215A4BB100088C45 /* tap.wav in Resources */ = {isa = PBXBuildFile; fileRef = EA10694A215A4BAF00088C45 /* tap.wav */; };
@@ -56,11 +56,11 @@
 		3BBFD12E215A3DF700CC1D2F /* Femo1UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Femo1UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BBFD132215A3DF700CC1D2F /* Femo1UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Femo1UITests.swift; sourceTree = "<group>"; };
 		3BBFD134215A3DF700CC1D2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84B3E93B215A532B000C6779 /* Main_page.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Main_page.sks; sourceTree = "<group>"; };
+		84B3E93D215A5351000C6779 /* Information.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Information.sks; sourceTree = "<group>"; };
 		EA10693E215A4BAD00088C45 /* Femo1-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Femo1-Bridging-Header.h"; sourceTree = "<group>"; };
 		EA10693F215A4BAE00088C45 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EA106941215A4BAE00088C45 /* Main_page.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Main_page.swift; sourceTree = "<group>"; };
-		EA106942215A4BAE00088C45 /* Main_page.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Main_page.sks; sourceTree = "<group>"; };
-		EA106945215A4BAE00088C45 /* Information.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Information.sks; sourceTree = "<group>"; };
 		EA106946215A4BAE00088C45 /* InformationScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InformationScene.swift; sourceTree = "<group>"; };
 		EA106948215A4BAE00088C45 /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		EA10694A215A4BAF00088C45 /* tap.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = tap.wav; sourceTree = "<group>"; };
@@ -164,8 +164,8 @@
 		EA106940215A4BAE00088C45 /* Main_Page */ = {
 			isa = PBXGroup;
 			children = (
+				84B3E93B215A532B000C6779 /* Main_page.sks */,
 				EA106941215A4BAE00088C45 /* Main_page.swift */,
-				EA106942215A4BAE00088C45 /* Main_page.sks */,
 			);
 			path = Main_Page;
 			sourceTree = "<group>";
@@ -173,7 +173,7 @@
 		EA106944215A4BAE00088C45 /* Information_Page */ = {
 			isa = PBXGroup;
 			children = (
-				EA106945215A4BAE00088C45 /* Information.sks */,
+				84B3E93D215A5351000C6779 /* Information.sks */,
 				EA106946215A4BAE00088C45 /* InformationScene.swift */,
 			);
 			path = Information_Page;
@@ -332,14 +332,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA106976215A4BB100088C45 /* Starfield.sks in Resources */,
+				84B3E93C215A532B000C6779 /* Main_page.sks in Resources */,
 				EA106970215A4BB100088C45 /* LaunchScreen.storyboard in Resources */,
 				EA106969215A4BB100088C45 /* tap.wav in Resources */,
-				EA106965215A4BB100088C45 /* Information.sks in Resources */,
+				84B3E93E215A5351000C6779 /* Information.sks in Resources */,
 				EA10696A215A4BB100088C45 /* Ta Da-Sound.wav in Resources */,
 				EA106972215A4BB100088C45 /* Main.storyboard in Resources */,
 				EA10696E215A4BB100088C45 /* GameScene.sks in Resources */,
 				EA106974215A4BB100088C45 /* Actions.sks in Resources */,
-				EA106963215A4BB100088C45 /* Main_page.sks in Resources */,
 				EA10696C215A4BB100088C45 /* QuestionScene.sks in Resources */,
 				EA106973215A4BB100088C45 /* Assets.xcassets in Resources */,
 			);
