@@ -13,7 +13,7 @@ class LostGame: SKScene {
     var newGameNode: SKSpriteNode!
     
     override func didMove(to view: SKView) {
-        _ = self.childNode(withName: "NewGame") as! SKSpriteNode
+        newGameNode = self.childNode(withName: "NewGame") as! SKSpriteNode
     }
     
     
@@ -23,7 +23,7 @@ class LostGame: SKScene {
         if let location = touch?.location(in: self) {
             let node = self.nodes(at: location)
         
-        if node.first?.name == "NewGame" {
+        if node.first?.name == "NewGame" || node.first?.name == "tryAgain"{
             let transition = SKTransition.doorsCloseHorizontal(withDuration: 0.5)
             let menuPage = Main_page(fileNamed: "Main_page")
             self.view?.presentScene(menuPage!, transition: transition)
