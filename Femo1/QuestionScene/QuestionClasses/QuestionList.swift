@@ -22,6 +22,16 @@ class QuestionList {
         
         list.append(Question(questionText: "Which statement is typically the first program newbies write?", choiceA: "Goodbye, Planet!", choiceB: "Hello, Galaxy", choiceC: "Hello, World!", choiceD: "Goodbye, Universe!", answer: 3))
         
+        list.append(Question(questionText: "Which language was founded by Yukihiro Matsumoto?", choiceA: "Haskell", choiceB: "PHP", choiceC: "Perl", choiceD: "Ruby", answer: 4))
+        
+        list.append(Question(questionText: "Which of the following is a library within Python?", choiceA: "Stunning Sandwich", choiceB: "Beautiful Soup", choiceC: "Pretty Panini", choiceD: "Fabulous Frittata", answer: 2))
+        
+        list.append(Question(questionText: "Which command would embolden text in HTML?", choiceA: "<b>", choiceB: "<samp>", choiceC: "<>blink", choiceD: "<img>", answer: 1))
+        
+        list.append(Question(questionText: "What is API short for?", choiceA: "Application Programming Interface", choiceB: "Application Programming Information", choiceC: "Apply Programming Interface", choiceD: "Applying Programme Interface", answer: 1))
+        
+        list.append(Question(questionText: "Which command in HTML is used for largest heading?", choiceA: "<h6>", choiceB: "<a>", choiceC: "<h1.", choiceD: "<body>", answer: 3))
+        
 
     }
 }
