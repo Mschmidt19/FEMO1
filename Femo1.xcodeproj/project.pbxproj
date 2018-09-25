@@ -13,6 +13,8 @@
 		3BEC9BFD215A71B500000EAB /* WonGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BEC9BFC215A71B500000EAB /* WonGame.swift */; };
 		3BEC9C0D215A76FA00000EAB /* celebration.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3BEC9C0B215A76FA00000EAB /* celebration.sks */; };
 		3BEC9C0E215A76FA00000EAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3BEC9C0C215A76FA00000EAB /* Assets.xcassets */; };
+		3BEC9C10215A7E8C00000EAB /* LostGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BEC9C0F215A7E8C00000EAB /* LostGame.swift */; };
+		3BEC9C12215A7EA200000EAB /* LostGame.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3BEC9C11215A7EA200000EAB /* LostGame.sks */; };
 		84B3E93C215A532B000C6779 /* Main_page.sks in Resources */ = {isa = PBXBuildFile; fileRef = 84B3E93B215A532B000C6779 /* Main_page.sks */; };
 		84B3E93E215A5351000C6779 /* Information.sks in Resources */ = {isa = PBXBuildFile; fileRef = 84B3E93D215A5351000C6779 /* Information.sks */; };
 		EA106961215A4BB100088C45 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA10693F215A4BAE00088C45 /* AppDelegate.swift */; };
@@ -64,6 +66,8 @@
 		3BEC9BFC215A71B500000EAB /* WonGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WonGame.swift; sourceTree = "<group>"; };
 		3BEC9C0B215A76FA00000EAB /* celebration.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = celebration.sks; sourceTree = "<group>"; };
 		3BEC9C0C215A76FA00000EAB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3BEC9C0F215A7E8C00000EAB /* LostGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LostGame.swift; sourceTree = "<group>"; };
+		3BEC9C11215A7EA200000EAB /* LostGame.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LostGame.sks; sourceTree = "<group>"; };
 		84B3E93B215A532B000C6779 /* Main_page.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Main_page.sks; sourceTree = "<group>"; };
 		84B3E93D215A5351000C6779 /* Information.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Information.sks; sourceTree = "<group>"; };
 		EA10693E215A4BAD00088C45 /* Femo1-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Femo1-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -148,6 +152,7 @@
 				3BBFD11E215A3DF700CC1D2F /* Info.plist */,
 				EA10693E215A4BAD00088C45 /* Femo1-Bridging-Header.h */,
 				3BEC9BFE215A733900000EAB /* Won_Game */,
+				3BEC9C13215A7EAA00000EAB /* LostGame */,
 			);
 			path = Femo1;
 			sourceTree = "<group>";
@@ -179,6 +184,15 @@
 				3BEC9C0C215A76FA00000EAB /* Assets.xcassets */,
 			);
 			path = Won_Game;
+			sourceTree = "<group>";
+		};
+		3BEC9C13215A7EAA00000EAB /* LostGame */ = {
+			isa = PBXGroup;
+			children = (
+				3BEC9C0F215A7E8C00000EAB /* LostGame.swift */,
+				3BEC9C11215A7EA200000EAB /* LostGame.sks */,
+			);
+			path = LostGame;
 			sourceTree = "<group>";
 		};
 		EA106940215A4BAE00088C45 /* Main_Page */ = {
@@ -363,6 +377,7 @@
 				EA10696E215A4BB100088C45 /* GameScene.sks in Resources */,
 				EA106974215A4BB100088C45 /* Actions.sks in Resources */,
 				EA10696C215A4BB100088C45 /* QuestionScene.sks in Resources */,
+				3BEC9C12215A7EA200000EAB /* LostGame.sks in Resources */,
 				EA106973215A4BB100088C45 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -393,6 +408,7 @@
 				3BEC9BFD215A71B500000EAB /* WonGame.swift in Sources */,
 				EA106961215A4BB100088C45 /* AppDelegate.swift in Sources */,
 				EA10696B215A4BB100088C45 /* QuestionScene.swift in Sources */,
+				3BEC9C10215A7E8C00000EAB /* LostGame.swift in Sources */,
 				EA106966215A4BB100088C45 /* InformationScene.swift in Sources */,
 				EA106975215A4BB100088C45 /* GameViewController.swift in Sources */,
 				EA106962215A4BB100088C45 /* Main_page.swift in Sources */,

@@ -139,6 +139,8 @@ class GameScene: SKScene {
             player1?.xScale = -1.0
         } else if nextTile == self.childNode(withName: "tile16") {
             player1?.xScale = 1.0
+        } else if nextTile == self.childNode(withName: "tile30") {
+            wonGame()
         }
         
         if let player1 = self.player1 {
@@ -163,6 +165,8 @@ class GameScene: SKScene {
             computer?.xScale = -1.0
         } else if nextTileComputer == self.childNode(withName: "tile16") {
             computer?.xScale = 1.0
+        } else if nextTileComputer == self.childNode(withName: "tile30") {
+            lostGame()
         }
         
         if let computer = self.computer {
@@ -292,6 +296,12 @@ class GameScene: SKScene {
         let transition = SKTransition.flipVertical(withDuration: 0.5)
         let wongame = WonGame(fileNamed: "WonGame")
         self.view?.presentScene(wongame!, transition: transition)
+    }
+    
+    func lostGame() {
+        let transition = SKTransition.flipVertical(withDuration: 0.5)
+        let lostgame = LostGame(fileNamed: "LostGame")
+        self.view?.presentScene(lostgame!, transition: transition)
     }
 
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
