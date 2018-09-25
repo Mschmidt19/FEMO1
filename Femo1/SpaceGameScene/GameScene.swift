@@ -91,9 +91,9 @@ class GameScene: SKScene {
         computer?.position = CGPoint(x: player1PositionX, y: player1PositionY + 15)
         
         if isKeyPresentInUserDefaults(key: "computerXScale") {
-            player1?.xScale = CGFloat(userDefaults.integer(forKey: "computerXScale"))
+            computer?.xScale = CGFloat(userDefaults.integer(forKey: "computerXScale"))
         } else {
-            player1?.xScale = 1.0
+            computer?.xScale = 1.0
         }
         
         self.addChild(computer!)
@@ -123,8 +123,6 @@ class GameScene: SKScene {
         if canPlayTurn() {
             playTurn()
         }
-
-        userDefaults.set(false, forKey: "turnInProgress")
 
     }
 
@@ -237,6 +235,10 @@ class GameScene: SKScene {
             }
             delayAdder += moveDuration
         }
+        DispatchQueue.main.asyncAfter(deadline: .now() + delayAdder) {
+            self.userDefaults.set(false, forKey: "turnInProgress")
+        }
+        
     }
 
     func askQuestion() {
@@ -275,7 +277,7 @@ class GameScene: SKScene {
             let node = self.nodes(at: location).first
 
             if node?.name == "nextTileButton" {
-                if !userDefaults.bool(forKey: "turnInProgress") {
+                if userDefaults.bool(forKey: "turnInProgress") == false {
                    askQuestion()
                 }
             } else if node?.name == "resetDefaults" {
