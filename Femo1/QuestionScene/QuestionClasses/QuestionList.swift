@@ -32,6 +32,17 @@ class QuestionList {
         
         list.append(Question(questionText: "Which command in HTML is used for largest heading?", choiceA: "<h6>", choiceB: "<a>", choiceC: "<h1.", choiceD: "<body>", answer: 3))
         
+        list.append(Question(questionText: "Which language does Angular JS use? ", choiceA: "Java", choiceB: "Javascript", choiceC: "Ruby", choiceD: "Scala", answer: 2))
+        
+        list.append(Question(questionText: "Which language was created by Apple in 2014?", choiceA: "Ring", choiceB: "Swift", choiceC: "Dart", choiceD: "Groovy", answer: 2))
+        
+        list.append(Question(questionText: "How old is Python?", choiceA: "10 years old", choiceB: "2 years old", choiceC: "27 years old", choiceD: "18 years old", answer: 3))
+        
+        list.append(Question(questionText: "Which language was founded by Guido van Rossum?", choiceA: "Ruby", choiceB: "Python", choiceC: "Java", choiceD: "C++", answer: 2))
+        
+        list.append(Question(questionText: "In SQL, what would the 'FOREIGN KEY' command do?", choiceA: "Link two tables together", choiceB: "Delete a table", choiceC: "Create a new key", choiceD: "Link two keys together", answer: 1))
+        
+        
 
     }
 }
