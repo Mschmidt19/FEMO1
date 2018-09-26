@@ -35,6 +35,7 @@ class Main_page: SKScene {
             }
             
             if node?.name  == "New_game" || node?.name == "NewGameText" {
+                userDefaults.set(false, forKey: "turnInProgress")
                 let gameScene = GameScene(fileNamed: "GameScene")
                 let transition = SKTransition.doorsOpenHorizontal(withDuration: 0.5)
                 self.view?.presentScene(gameScene!, transition: transition)
