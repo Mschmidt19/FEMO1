@@ -82,10 +82,10 @@ class GameScene: SKScene {
             
             
         } else {
-            location1 = (Int(arc4random_uniform(UInt32(tilesArray!.count - tilePenalty - 1))) + tilePenalty)
+            location1 = (Int(arc4random_uniform(UInt32(tilesArray!.count - tilePenalty - 2))) + tilePenalty)
             location2 = location1
             while location2 == location1 {
-                location2 = (Int(arc4random_uniform(UInt32(tilesArray!.count - tilePenalty))) + tilePenalty)
+                location2 = (Int(arc4random_uniform(UInt32(tilesArray!.count - tilePenalty - 2))) + tilePenalty)
             }
             blackholeLocations.append(location1)
             blackholeLocations.append(location2)
@@ -104,7 +104,7 @@ class GameScene: SKScene {
     }
 
     func createPlayer1() {
-        player1 = SKSpriteNode(imageNamed: "robot1")
+        player1 = SKSpriteNode(imageNamed: "character")
 
         if isKeyPresentInUserDefaults(key: "currentTile") {
             currentTile = userDefaults.integer(forKey: "currentTile")
@@ -114,19 +114,21 @@ class GameScene: SKScene {
 
         guard let player1PositionX = tilesArray?[currentTile].position.x else {return}
         guard let player1PositionY = tilesArray?[currentTile].position.y else {return}
-        player1?.position = CGPoint(x: player1PositionX, y: player1PositionY + 15)
+        player1?.position = CGPoint(x: player1PositionX, y: player1PositionY + 5)
 
         if isKeyPresentInUserDefaults(key: "playerXScale") {
             player1?.xScale = CGFloat(userDefaults.integer(forKey: "playerXScale"))
         } else {
             player1?.xScale = 1.0
         }
+        
+        player1?.zPosition = 5
 
         self.addChild(player1!)
     }
     
     func createComputer() {
-        computer = SKSpriteNode(imageNamed: "character")
+        computer = SKSpriteNode(imageNamed: "robot1")
         
         if isKeyPresentInUserDefaults(key: "currentTileComputer") {
             currentTileComputer = userDefaults.integer(forKey: "currentTileComputer")
@@ -134,15 +136,17 @@ class GameScene: SKScene {
             currentTileComputer = 0
         }
         
-        guard let player1PositionX = tilesArray?[currentTileComputer].position.x else {return}
-        guard let player1PositionY = tilesArray?[currentTileComputer].position.y else {return}
-        computer?.position = CGPoint(x: player1PositionX, y: player1PositionY + 15)
+        guard let computerPositionX = tilesArray?[currentTileComputer].position.x else {return}
+        guard let computerPositionY = tilesArray?[currentTileComputer].position.y else {return}
+        computer?.position = CGPoint(x: computerPositionX, y: computerPositionY + 15)
         
         if isKeyPresentInUserDefaults(key: "computerXScale") {
             computer?.xScale = CGFloat(userDefaults.integer(forKey: "computerXScale"))
         } else {
             computer?.xScale = 1.0
         }
+        
+        computer?.zPosition = 4
         
         self.addChild(computer!)
     }
@@ -196,7 +200,7 @@ class GameScene: SKScene {
         if let player1 = self.player1 {
             currentTile += 1
             
-            let moveAction = SKAction.move(to: CGPoint(x: nextTile.position.x, y: nextTile.position.y + 15), duration: moveDuration)
+            let moveAction = SKAction.move(to: CGPoint(x: nextTile.position.x, y: nextTile.position.y + 5), duration: moveDuration)
             player1.run(moveAction, completion: {
                 self.movingToTile = false
             })
@@ -221,7 +225,7 @@ class GameScene: SKScene {
         if let player1 = self.player1 {
             currentTile -= 1
             
-            let moveAction = SKAction.move(to: CGPoint(x: previousTile.position.x, y: previousTile.position.y + 15), duration: moveDuration)
+            let moveAction = SKAction.move(to: CGPoint(x: previousTile.position.x, y: previousTile.position.y + 5), duration: moveDuration)
             player1.run(moveAction, completion: {
                 self.movingToTile = false
             })
@@ -280,17 +284,32 @@ class GameScene: SKScene {
         }
     }
 
-    func rollDie() {
+    func rollDie(name: String) {
         let roll = arc4random_uniform(_:6) + 1
-        if indexOfLastTile - currentTile < roll {
-            dieRoll = Int(indexOfLastTile - currentTile)
+        if name == "You" {
+            if indexOfLastTile - currentTile < roll {
+                dieRoll = Int(indexOfLastTile - currentTile)
+            } else {
+            dieRoll = Int(roll)
+            }
         } else {
-        dieRoll = Int(roll)
+            if indexOfLastTile - currentTileComputer < roll {
+                dieRoll = Int(indexOfLastTile - currentTileComputer)
+            } else {
+                dieRoll = Int(roll)
+            }
         }
     }
 
     func displayDieRollWithTimer(name: String) {
         dieRollLabel.text = "\(name) rolled a \(dieRoll)"
+        DispatchQueue.main.asyncAfter(deadline: .now() + textDisappearTimer) {
+            self.dieRollLabel.text = ""
+        }
+    }
+    
+    func displayBlackholePenaltyWithTimer(name: String) {
+        dieRollLabel.text = "\(name) landed on a black hole!"
         DispatchQueue.main.asyncAfter(deadline: .now() + textDisappearTimer) {
             self.dieRollLabel.text = ""
         }
@@ -317,68 +336,64 @@ class GameScene: SKScene {
 
     func playTurn() {
         print(blackholeLocations)
-        rollDie()
+        rollDie(name: "You")
         displayDieRollWithTimer(name: "You")
         var delayAdder = moveDuration
-        for _ in 1 ... dieRoll {
-            DispatchQueue.main.asyncAfter(deadline: .now() + delayAdder) {
-                self.moveToNextTile()
-            }
-            delayAdder += moveDuration
-        }
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + delayAdder + 1.0) {
-            print("player: \(self.currentTile)")
-            if self.blackholeLocations.contains(self.currentTile) {
-                print("player landed on blackhole")
-                self.goBackXTiles(number: self.tilePenalty, character: self.player1!)
-                delayAdder += (Double(self.tilePenalty) * self.moveDuration)
-                
-                DispatchQueue.main.asyncAfter(deadline: .now() + delayAdder + 1.0) {
-                    self.playComputerTurn()
+        if dieRoll > 0 {
+            for _ in 1 ... dieRoll {
+                DispatchQueue.main.asyncAfter(deadline: .now() + delayAdder) {
+                    self.moveToNextTile()
                 }
-            } else {
-                DispatchQueue.main.asyncAfter(deadline: .now() + delayAdder + 1.0) {
-                    self.playComputerTurn()
-                }
+                delayAdder += moveDuration
             }
             
-            
+            DispatchQueue.main.asyncAfter(deadline: .now() + delayAdder + 1.0) {
+                print("player: \(self.currentTile)")
+                if self.blackholeLocations.contains(self.currentTile) {
+                    self.displayBlackholePenaltyWithTimer(name: "You")
+                    self.goBackXTiles(number: self.tilePenalty, character: self.player1!)
+                    delayAdder += (Double(self.tilePenalty) * self.moveDuration)
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + delayAdder - 2.0) {
+                        self.playComputerTurn()
+                    }
+                } else {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + delayAdder - 2.0) {
+                        self.playComputerTurn()
+                    }
+                }
+            }
         }
-        
-        
-        
     }
     
     func playComputerTurn() {
-        rollDie()
+        rollDie(name: "Computer")
         displayDieRollWithTimer(name: "Computer")
         var delayAdder = moveDuration
-        for _ in 1 ... dieRoll {
-            DispatchQueue.main.asyncAfter(deadline: .now() + delayAdder) {
-                self.moveComputerToNextTile()
-            }
-            delayAdder += moveDuration
-        }
-        DispatchQueue.main.asyncAfter(deadline: .now() + delayAdder + 1.0) {
-            print("computer: \(self.currentTileComputer)")
-            if self.blackholeLocations.contains(self.currentTileComputer) {
-                print("computer landed on blackhole")
-                self.goBackXTiles(number: self.tilePenalty, character: self.computer!)
-                delayAdder += (Double(self.tilePenalty) * self.moveDuration)
-                
+        if dieRoll > 0 {
+            for _ in 1 ... dieRoll {
                 DispatchQueue.main.asyncAfter(deadline: .now() + delayAdder) {
-                    self.userDefaults.set(false, forKey: "turnInProgress")
+                    self.moveComputerToNextTile()
                 }
-            }else {
-                DispatchQueue.main.asyncAfter(deadline: .now() + delayAdder) {
-                    self.userDefaults.set(false, forKey: "turnInProgress")
+                delayAdder += moveDuration
+            }
+            DispatchQueue.main.asyncAfter(deadline: .now() + delayAdder + 1.0) {
+                print("computer: \(self.currentTileComputer)")
+                if self.blackholeLocations.contains(self.currentTileComputer) {
+                    self.displayBlackholePenaltyWithTimer(name: "Computer")
+                    self.goBackXTiles(number: self.tilePenalty, character: self.computer!)
+                    delayAdder += (Double(self.tilePenalty) * self.moveDuration)
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + delayAdder - 2.0) {
+                        self.userDefaults.set(false, forKey: "turnInProgress")
+                    }
+                }else {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + delayAdder - 2.0) {
+                        self.userDefaults.set(false, forKey: "turnInProgress")
+                    }
                 }
             }
-            
-            
         }
-        
         
     }
     
@@ -478,7 +493,7 @@ class GameScene: SKScene {
         userDefaults.removePersistentDomain(forName: bundleIdentifier)
         
         currentTile = 0
-        player1?.position = CGPoint(x: tilesArray!.first!.position.x, y: tilesArray!.first!.position.y + 15)
+        player1?.position = CGPoint(x: tilesArray!.first!.position.x, y: tilesArray!.first!.position.y)
         player1?.xScale = 1
         currentTileComputer = 0
         computer?.position = CGPoint(x: tilesArray!.first!.position.x, y: tilesArray!.first!.position.y + 15)
