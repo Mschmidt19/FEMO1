@@ -346,7 +346,6 @@ class GameScene: SKScene {
             }
 
             DispatchQueue.main.asyncAfter(deadline: .now() + delayAdder + 1.0) {
-                print("player: \(self.currentTile)")
                 if self.blackholeLocations.contains(self.currentTile) {
                     self.displayBlackholePenaltyWithTimer(name: "You")
                     self.goBackXTiles(number: self.tilePenalty, character: self.player1!)
@@ -376,7 +375,6 @@ class GameScene: SKScene {
                 delayAdder += moveDuration
             }
             DispatchQueue.main.asyncAfter(deadline: .now() + delayAdder + 1.0) {
-                print("computer: \(self.currentTileComputer)")
                 if self.blackholeLocations.contains(self.currentTileComputer) {
                     self.displayBlackholePenaltyWithTimer(name: "Computer")
                     self.goBackXTiles(number: self.tilePenalty, character: self.computer!)
@@ -454,8 +452,6 @@ class GameScene: SKScene {
                 if userDefaults.bool(forKey: "turnInProgress") == false {
                    askQuestion()
                 }
-            } else if node?.name == "resetDefaults" {
-                resetGameState()
             } else if node?.name == "Menu_button" {
                 goToHomeScene()
             } else if node?.name == "Information_button" {
@@ -526,14 +522,6 @@ class GameScene: SKScene {
         blackholeLocations.append(location1)
         blackholeLocations.append(location2)
     }
-
-//    func resetGameState() {
-//        let defaults = UserDefaults.standard
-//        let dictionary = defaults.dictionaryRepresentation()
-//        dictionary.keys.forEach { key in
-//            defaults.set(nil, forKey: key)
-//        }
-//    }
 
     func saveGameState() {
         userDefaults.set(currentTile, forKey: "currentTile")

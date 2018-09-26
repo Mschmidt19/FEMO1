@@ -18,7 +18,7 @@ class LostGame: SKScene {
         starField = (self.childNode(withName: "starField") as! SKEmitterNode)
         starField.advanceSimulationTime(14)
         
-        newGameNode = self.childNode(withName: "NewGame") as! SKSpriteNode
+        newGameNode = (self.childNode(withName: "NewGame") as! SKSpriteNode)
     }
     
     

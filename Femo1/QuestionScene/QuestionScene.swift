@@ -57,7 +57,6 @@ class QuestionScene: SKScene {
         
         if isKeyPresentInUserDefaults(key: "questionOrderArray") {
             questionOrderArray = userDefaults.array(forKey: "questionOrderArray") as! [Int]
-            print("from defaults: \(questionOrderArray)")
         } else {
             createQuestionOrderArray()
         }
@@ -69,13 +68,6 @@ class QuestionScene: SKScene {
         }
         
         let questionCount = questionList.count
-        
-        
-        
-//        print(currentQuestion)
-//        for i in 0...questionCount-1 {
-//            print(questionList[i].question)
-//        }
         
         questionText.text = (questionList[questionOrderArray[currentQuestion % questionCount]].question)
         button1Text.text = (questionList[questionOrderArray[currentQuestion % questionCount]].optionA)
@@ -104,7 +96,6 @@ class QuestionScene: SKScene {
             tempArray.append(i)
         }
         questionOrderArray = shuffleArray(array: tempArray)
-        print("from create: \(questionOrderArray)")
     }
     
     func shuffleArray(array: [Int]) -> [Int] {
