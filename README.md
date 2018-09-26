@@ -146,6 +146,7 @@ Pull the FEMO.app icon on to your laptop screen and open it to start playing the
 Eunbit Evie Kim, Farah Jabri, Olivia Brady, Marek Schmidt
 
 
-
+## About the project
+While building this project we encountered challenges when merging branches, to save time and put the project back on track we created a new repo (this one), added the .gitignore and .gitattributes files and moved over the files. We kept the previous repo (link above) as it is a part of our initial project. 
 
 
