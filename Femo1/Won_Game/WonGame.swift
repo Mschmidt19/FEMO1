@@ -12,8 +12,13 @@ import GameplayKit
 class WonGame: SKScene {
     var celebration:SKEmitterNode!
     var newGameNode: SKSpriteNode!
+    var starField: SKEmitterNode!
     
     override func didMove(to view: SKView) {
+        
+        starField = (self.childNode(withName: "starField") as! SKEmitterNode)
+        starField.advanceSimulationTime(14)
+        
         _ = self.childNode(withName: "NewGame") as! SKSpriteNode
 
         celebration = SKEmitterNode(fileNamed: "celebration")
@@ -29,7 +34,7 @@ class WonGame: SKScene {
         if let location = touch?.location(in: self) {
             let node = self.nodes(at: location)
             
-            if node.first?.name == "NewGame" {
+            if node.first?.name == "NewGame" || node.first?.name ==  "newGame" {
                 let transition = SKTransition.doorsCloseHorizontal(withDuration: 0.5)
                 let menuPage = Main_page(fileNamed: "Main_page")
                 self.view?.presentScene(menuPage!, transition: transition)

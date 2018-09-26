@@ -56,7 +56,7 @@ class GameScene: SKScene {
     }
 
     func createPlayer1() {
-        player1 = SKSpriteNode(imageNamed: "robot1")
+        player1 = SKSpriteNode(imageNamed: "character")
 
         if isKeyPresentInUserDefaults(key: "currentTile") {
             currentTile = userDefaults.integer(forKey: "currentTile")
@@ -78,7 +78,7 @@ class GameScene: SKScene {
     }
     
     func createComputer() {
-        computer = SKSpriteNode(imageNamed: "character")
+        computer = SKSpriteNode(imageNamed: "robot1")
         
         if isKeyPresentInUserDefaults(key: "currentTileComputer") {
             currentTileComputer = userDefaults.integer(forKey: "currentTileComputer")

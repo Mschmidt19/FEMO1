@@ -9,7 +9,7 @@
 import SpriteKit
 
 class QuestionScene: SKScene {
-    
+  
     let userDefaults = UserDefaults.standard
     
     var questionList = [Question]()
@@ -69,6 +69,8 @@ class QuestionScene: SKScene {
         }
         
         let questionCount = questionList.count
+        
+        
         
 //        print(currentQuestion)
 //        for i in 0...questionCount-1 {

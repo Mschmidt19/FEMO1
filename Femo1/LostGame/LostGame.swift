@@ -11,8 +11,12 @@ import GameplayKit
 
 class LostGame: SKScene {
     var newGameNode: SKSpriteNode!
+    var starField: SKEmitterNode!
     
     override func didMove(to view: SKView) {
+        starField = (self.childNode(withName: "starField") as! SKEmitterNode)
+        starField.advanceSimulationTime(14)
+        
         newGameNode = self.childNode(withName: "NewGame") as! SKSpriteNode
     }
     
