@@ -50,10 +50,6 @@ class GameScene: SKScene {
     var dieRollLabel: SKLabelNode!
     var menu_buttonNode:SKSpriteNode!
     var InformationNode:SKSpriteNode!
-    
-    var playerGoBackTileButton:SKSpriteNode!
-    var computerGoBackTileButton:SKSpriteNode!
-    
 
     let moveSound = SKAction.playSoundFileNamed("tap.wav", waitForCompletion: false)
 
@@ -114,7 +110,7 @@ class GameScene: SKScene {
 
         guard let player1PositionX = tilesArray?[currentTile].position.x else {return}
         guard let player1PositionY = tilesArray?[currentTile].position.y else {return}
-        player1?.position = CGPoint(x: player1PositionX, y: player1PositionY + 5)
+        player1?.position = CGPoint(x: player1PositionX, y: player1PositionY + 15)
 
         if isKeyPresentInUserDefaults(key: "playerXScale") {
             player1?.xScale = CGFloat(userDefaults.integer(forKey: "playerXScale"))
@@ -165,9 +161,6 @@ class GameScene: SKScene {
         InformationNode = (self.childNode(withName: "Information_button") as! SKSpriteNode)
         InformationNode.texture = SKTexture(imageNamed: "information_button")
         
-        playerGoBackTileButton = (self.childNode(withName: "playerGoBackTile") as! SKSpriteNode)
-        computerGoBackTileButton = (self.childNode(withName: "computerGoBackTile") as! SKSpriteNode)
-        
         indexOfLastTile = (tilesArray?.index{$0 === tilesArray?.last})!
 
         dieRollLabel = (self.childNode(withName: "dieRollLabel") as! SKLabelNode)
@@ -200,7 +193,7 @@ class GameScene: SKScene {
         if let player1 = self.player1 {
             currentTile += 1
             
-            let moveAction = SKAction.move(to: CGPoint(x: nextTile.position.x, y: nextTile.position.y + 5), duration: moveDuration)
+            let moveAction = SKAction.move(to: CGPoint(x: nextTile.position.x, y: nextTile.position.y + 15), duration: moveDuration)
             player1.run(moveAction, completion: {
                 self.movingToTile = false
             })
@@ -225,7 +218,7 @@ class GameScene: SKScene {
         if let player1 = self.player1 {
             currentTile -= 1
             
-            let moveAction = SKAction.move(to: CGPoint(x: previousTile.position.x, y: previousTile.position.y + 5), duration: moveDuration)
+            let moveAction = SKAction.move(to: CGPoint(x: previousTile.position.x, y: previousTile.position.y + 15), duration: moveDuration)
             player1.run(moveAction, completion: {
                 self.movingToTile = false
             })
@@ -302,6 +295,7 @@ class GameScene: SKScene {
     }
 
     func displayDieRollWithTimer(name: String) {
+        dieRollLabel.fontSize = 28.0
         dieRollLabel.text = "\(name) rolled a \(dieRoll)"
         DispatchQueue.main.asyncAfter(deadline: .now() + textDisappearTimer) {
             self.dieRollLabel.text = ""
@@ -309,6 +303,7 @@ class GameScene: SKScene {
     }
     
     func displayBlackholePenaltyWithTimer(name: String) {
+        dieRollLabel.fontSize = 20.0
         dieRollLabel.text = "\(name) landed on a black hole!"
         DispatchQueue.main.asyncAfter(deadline: .now() + textDisappearTimer) {
             self.dieRollLabel.text = ""
@@ -462,10 +457,6 @@ class GameScene: SKScene {
                 goToHomeScene()
             } else if node?.name == "Information_button" {
                 goToInfoScene()
-            } else if node?.name == "playerGoBackTile" {
-                goBackXTiles(number: tilePenalty, character: player1!)
-            } else if node?.name == "computerGoBackTile" {
-                goBackXTiles(number: tilePenalty, character: computer!)
             }
         }
     }
@@ -493,7 +484,7 @@ class GameScene: SKScene {
         userDefaults.removePersistentDomain(forName: bundleIdentifier)
         
         currentTile = 0
-        player1?.position = CGPoint(x: tilesArray!.first!.position.x, y: tilesArray!.first!.position.y)
+        player1?.position = CGPoint(x: tilesArray!.first!.position.x, y: tilesArray!.first!.position.y + 15)
         player1?.xScale = 1
         currentTileComputer = 0
         computer?.position = CGPoint(x: tilesArray!.first!.position.x, y: tilesArray!.first!.position.y + 15)
