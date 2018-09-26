@@ -219,14 +219,16 @@ class GameScene: SKScene {
         rollDie()
         displayDieRollWithTimer(name: "You")
         var delayAdder = moveDuration
-        for _ in 1 ... dieRoll {
-            DispatchQueue.main.asyncAfter(deadline: .now() + delayAdder) {
-                self.moveToNextTile()
+        if dieRoll > 0 {
+            for _ in 1 ... dieRoll {
+                DispatchQueue.main.asyncAfter(deadline: .now() + delayAdder) {
+                    self.moveToNextTile()
+                }
+                delayAdder += moveDuration
             }
-            delayAdder += moveDuration
-        }
-        DispatchQueue.main.asyncAfter(deadline: .now() + delayAdder + 1.0) {
-            self.playComputerTurn()
+            DispatchQueue.main.asyncAfter(deadline: .now() + delayAdder + 1.0) {
+                self.playComputerTurn()
+            }
         }
     }
     
@@ -234,14 +236,16 @@ class GameScene: SKScene {
         rollDie()
         displayDieRollWithTimer(name: "Computer")
         var delayAdder = moveDuration
-        for _ in 1 ... dieRoll {
-            DispatchQueue.main.asyncAfter(deadline: .now() + delayAdder) {
-                self.moveComputerToNextTile()
+        if dieRoll > 0 {
+            for _ in 1 ... dieRoll {
+                DispatchQueue.main.asyncAfter(deadline: .now() + delayAdder) {
+                    self.moveComputerToNextTile()
+                }
+                delayAdder += moveDuration
             }
-            delayAdder += moveDuration
-        }
-        DispatchQueue.main.asyncAfter(deadline: .now() + delayAdder) {
-            self.userDefaults.set(false, forKey: "turnInProgress")
+            DispatchQueue.main.asyncAfter(deadline: .now() + delayAdder) {
+                self.userDefaults.set(false, forKey: "turnInProgress")
+            }
         }
         
     }
