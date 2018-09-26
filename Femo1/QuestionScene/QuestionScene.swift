@@ -86,7 +86,6 @@ class QuestionScene: SKScene {
         button4Text.text = (questionList[questionOrderArray[currentQuestion % questionCount]].optionD)
         button4Text.fitToWidth(maxWidth: maxAnswerWidth)
 
-        
         let fontSizes = [button1Text.fontSize, button2Text.fontSize, button3Text.fontSize, button4Text.fontSize]
         let smallestFontSize = fontSizes.min()
         button1Text.fontSize = smallestFontSize!
@@ -108,15 +107,6 @@ class QuestionScene: SKScene {
         }
         
     }
-    
-//    func findSmallestFontSize(label1: SKLabelNode, label2: SKLabelNode, label3: SKLabelNode, label4: SKLabelNode, maxWidth: CGFloat) -> CGFloat {
-//        var fontSize: CGFloat
-//        let fontSizes = [label1.fitToWidth(maxWidth: maxWidth), label2.fitToWidth(maxWidth: maxWidth), label3.fitToWidth(maxWidth: maxWidth), label4.fitToWidth(maxWidth: maxWidth)]
-//        print(fontSizes)
-//        fontSize = fontSizes.min()!
-//        print("smallest font size = \(fontSize)")
-//        return fontSize
-//    }
     
     func createQuestionOrderArray() {
         var tempArray = [Int]()
