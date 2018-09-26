@@ -33,6 +33,7 @@ class LostGame: SKScene {
             let transition = SKTransition.doorsCloseHorizontal(withDuration: 0.5)
             let gameScene = GameScene(fileNamed: "GameScene")
             self.view?.presentScene(gameScene!, transition: transition)
+            gameScene!.resetGameState()
             }
         }
     }

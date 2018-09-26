@@ -180,12 +180,20 @@ class GameScene: SKScene {
         }
     }
 
-    func rollDie() {
+    func rollDie(name: String) {
         let roll = arc4random_uniform(_:6) + 1
-        if indexOfLastTile - currentTile < roll {
-            dieRoll = Int(indexOfLastTile - currentTile)
+        if name == "You" {
+            if indexOfLastTile - currentTile < roll {
+                dieRoll = Int(indexOfLastTile - currentTile)
+            } else {
+            dieRoll = Int(roll)
+            }
         } else {
-        dieRoll = Int(roll)
+            if indexOfLastTile - currentTileComputer < roll {
+                dieRoll = Int(indexOfLastTile - currentTileComputer)
+            } else {
+                dieRoll = Int(roll)
+            }
         }
     }
 
@@ -216,7 +224,7 @@ class GameScene: SKScene {
     }
 
     func playTurn() {
-        rollDie()
+        rollDie(name: "You")
         displayDieRollWithTimer(name: "You")
         var delayAdder = moveDuration
         if dieRoll > 0 {
@@ -233,7 +241,7 @@ class GameScene: SKScene {
     }
     
     func playComputerTurn() {
-        rollDie()
+        rollDie(name: "Computer")
         displayDieRollWithTimer(name: "Computer")
         var delayAdder = moveDuration
         if dieRoll > 0 {
