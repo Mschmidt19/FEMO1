@@ -52,6 +52,5 @@ class Main_pageUITests: XCTestCase {
         let newGameButton = app.otherElements["New Game"]
         XCTAssertTrue(newGameButton.isHittable)
     }
-        
 }
 

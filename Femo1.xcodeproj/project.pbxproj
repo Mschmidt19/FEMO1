@@ -152,11 +152,11 @@
 				EA106944215A4BAE00088C45 /* Information_Page */,
 				EA10694C215A4BAF00088C45 /* QuestionScene */,
 				EA106952215A4BAF00088C45 /* SpaceGameScene */,
+				3BEC9BFE215A733900000EAB /* Won_Game */,
+				3BEC9C13215A7EAA00000EAB /* LostGame */,
 				EA106949215A4BAF00088C45 /* Sounds */,
 				3BBFD11E215A3DF700CC1D2F /* Info.plist */,
 				EA10693E215A4BAD00088C45 /* Femo1-Bridging-Header.h */,
-				3BEC9BFE215A733900000EAB /* Won_Game */,
-				3BEC9C13215A7EAA00000EAB /* LostGame */,
 			);
 			path = Femo1;
 			sourceTree = "<group>";
