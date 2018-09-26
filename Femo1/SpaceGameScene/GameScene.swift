@@ -448,11 +448,11 @@ class GameScene: SKScene {
             let location = touch.previousLocation(in: self)
             let node = self.nodes(at: location).first
 
-            if node?.name == "nextTileButton" {
+            if node?.name == "nextTileButton" || node?.name == "NextMoveTextLabel"{
                 if userDefaults.bool(forKey: "turnInProgress") == false {
                    askQuestion()
                 }
-            } else if node?.name == "Menu_button" {
+            } else if node?.name == "Menu_button" || node?.name == "Menu"{
                 goToHomeScene()
             } else if node?.name == "Information_button" {
                 goToInfoScene()
