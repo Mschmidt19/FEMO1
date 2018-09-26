@@ -34,6 +34,7 @@
 		EA106977215A4BB100088C45 /* QuestionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA106960215A4BB100088C45 /* QuestionList.swift */; };
 		EA88C097215A69DF0025B334 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA88C093215A69DF0025B334 /* LaunchScreen.storyboard */; };
 		EA88C098215A69DF0025B334 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA88C095215A69DF0025B334 /* Main.storyboard */; };
+		EAA12196215BBFB20089B749 /* SKLabelNodeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA12195215BBFB20089B749 /* SKLabelNodeExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +89,7 @@
 		EA106960215A4BB100088C45 /* QuestionList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionList.swift; sourceTree = "<group>"; };
 		EA88C094215A69DF0025B334 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EA88C096215A69DF0025B334 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Main.storyboard; sourceTree = "<group>"; };
+		EAA12195215BBFB20089B749 /* SKLabelNodeExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKLabelNodeExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -228,6 +230,7 @@
 				EA106978215A4CE400088C45 /* QuestionClasses */,
 				EA10694E215A4BAF00088C45 /* QuestionScene.sks */,
 				EA10694D215A4BAF00088C45 /* QuestionScene.swift */,
+				EAA12195215BBFB20089B749 /* SKLabelNodeExtension.swift */,
 			);
 			path = QuestionScene;
 			sourceTree = "<group>";
@@ -405,6 +408,7 @@
 			files = (
 				EA106977215A4BB100088C45 /* QuestionList.swift in Sources */,
 				EA106968215A4BB100088C45 /* Question.swift in Sources */,
+				EAA12196215BBFB20089B749 /* SKLabelNodeExtension.swift in Sources */,
 				3BEC9BFD215A71B500000EAB /* WonGame.swift in Sources */,
 				EA106961215A4BB100088C45 /* AppDelegate.swift in Sources */,
 				EA10696B215A4BB100088C45 /* QuestionScene.swift in Sources */,

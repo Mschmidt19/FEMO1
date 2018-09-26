@@ -69,11 +69,27 @@ class QuestionScene: SKScene {
         
         let questionCount = questionList.count
         
+        let maxQuestionWidth = 300 as CGFloat
+        let maxAnswerWidth = 280 as CGFloat
+        
         questionText.text = (questionList[questionOrderArray[currentQuestion % questionCount]].question)
+        questionText.lineBreakMode = NSLineBreakMode.byWordWrapping
+        questionText.preferredMaxLayoutWidth = maxQuestionWidth
+        questionText.numberOfLines = 0
+//        let fontSize = findSmallestFontSize(label1: button1Text, label2: button2Text, label3: button3Text, label4: button4Text, maxWidth: 280)
+//        print(fontSize)
         button1Text.text = (questionList[questionOrderArray[currentQuestion % questionCount]].optionA)
+        button1Text.fitToWidth(maxWidth: maxAnswerWidth)
+//        button1Text.fontSize = fontSize
         button2Text.text = (questionList[questionOrderArray[currentQuestion % questionCount]].optionB)
+        button2Text.fitToWidth(maxWidth: maxAnswerWidth)
+//        button2Text.fontSize = fontSize
         button3Text.text = (questionList[questionOrderArray[currentQuestion % questionCount]].optionC)
+        button3Text.fitToWidth(maxWidth: maxAnswerWidth)
+//        button3Text.fontSize = fontSize
         button4Text.text = (questionList[questionOrderArray[currentQuestion % questionCount]].optionD)
+        button4Text.fitToWidth(maxWidth: maxAnswerWidth)
+//        button4Text.fontSize = fontSize
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -89,6 +105,15 @@ class QuestionScene: SKScene {
         }
         
     }
+    
+//    func findSmallestFontSize(label1: SKLabelNode, label2: SKLabelNode, label3: SKLabelNode, label4: SKLabelNode, maxWidth: CGFloat) -> CGFloat {
+//        var fontSize: CGFloat
+//        let fontSizes = [label1.fitToWidth(maxWidth: maxWidth), label2.fitToWidth(maxWidth: maxWidth), label3.fitToWidth(maxWidth: maxWidth), label4.fitToWidth(maxWidth: maxWidth)]
+//        print(fontSizes)
+//        fontSize = fontSizes.min()!
+//        print("smallest font size = \(fontSize)")
+//        return fontSize
+//    }
     
     func createQuestionOrderArray() {
         var tempArray = [Int]()
