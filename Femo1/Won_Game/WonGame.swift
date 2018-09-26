@@ -20,7 +20,7 @@ class WonGame: SKScene {
         starField = (self.childNode(withName: "starField") as! SKEmitterNode)
         starField.advanceSimulationTime(14)
         
-        newGameNode = self.childNode(withName: "New_game") as! SKSpriteNode
+        newGameNode = (self.childNode(withName: "New_game") as! SKSpriteNode)
 
         celebration = SKEmitterNode(fileNamed: "celebration")
         celebration.position = CGPoint(x:160, y:320)
