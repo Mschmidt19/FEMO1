@@ -9,7 +9,7 @@
 import SpriteKit
 
 class QuestionScene: SKScene {
-    
+  
     let userDefaults = UserDefaults.standard
     
     var questionList = [Question]()
@@ -57,6 +57,7 @@ class QuestionScene: SKScene {
         
         if isKeyPresentInUserDefaults(key: "questionOrderArray") {
             questionOrderArray = userDefaults.array(forKey: "questionOrderArray") as! [Int]
+            print("from defaults: \(questionOrderArray)")
         } else {
             createQuestionOrderArray()
         }
@@ -68,6 +69,8 @@ class QuestionScene: SKScene {
         }
         
         let questionCount = questionList.count
+        
+        
         
 //        print(currentQuestion)
 //        for i in 0...questionCount-1 {
@@ -100,8 +103,23 @@ class QuestionScene: SKScene {
         for i in 0...questionList.count-1 {
             tempArray.append(i)
         }
-        tempArray.shuffle()
-        questionOrderArray = tempArray
+        questionOrderArray = shuffleArray(array: tempArray)
+        print("from create: \(questionOrderArray)")
+    }
+    
+    func shuffleArray(array: [Int]) -> [Int] {
+        var items = array
+        var shuffled = [Int]();
+        
+        for _ in 0..<items.count {
+            let rand = Int(arc4random_uniform(UInt32(items.count)))
+            
+            shuffled.append(items[rand])
+            
+            items.remove(at: rand)
+        }
+        
+        return shuffled
     }
     
     func presentSpaceBoard() {

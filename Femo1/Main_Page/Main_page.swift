@@ -11,15 +11,15 @@ import SpriteKit
 class Main_page: SKScene {
 
     let userDefaults = UserDefaults.standard
-    var Space_sceneNode: SKSpriteNode!
-    var Desert_sceneNode: SKSpriteNode!
+    var ResumeGameNode: SKSpriteNode!
+    var New_GameNode: SKSpriteNode!
     
     override func didMove(to view: SKView) {
-        Space_sceneNode = (self.childNode(withName: "Space_scene") as! SKSpriteNode)
-        Desert_sceneNode = (self.childNode(withName: "Desert_scene") as! SKSpriteNode)
+        ResumeGameNode = (self.childNode(withName: "ResumeGame") as! SKSpriteNode)
+        New_GameNode = (self.childNode(withName: "New_game") as! SKSpriteNode)
         
-        Space_sceneNode.texture = SKTexture(imageNamed: "new_button")
-        Desert_sceneNode.texture = SKTexture(imageNamed: "new_button")
+        ResumeGameNode.texture = SKTexture(imageNamed: "new_button")
+        New_GameNode.texture = SKTexture(imageNamed: "new_button")
         
     }
     
@@ -27,18 +27,19 @@ class Main_page: SKScene {
         let touch = touches.first
         if let location = touch?.location(in: self) {
            let node = self.nodes(at: location).first
-            if node?.name  == "Space_scene" || node?.name == "SpaceText" {
+            if node?.name  == "ResumeGame" || node?.name == "ResumeGameText" {
                 userDefaults.set(false, forKey: "turnInProgress")
                 let transition = SKTransition.doorsOpenHorizontal(withDuration: 0.5)
                 let gameScene = GameScene(fileNamed: "GameScene")
                 self.view?.presentScene(gameScene!, transition: transition)
             }
             
-//            if node?.name  == "Desert_scene" || node?.name == "DesertText" {
-//                let transition = SKTransition.doorsOpenHorizontal(withDuration: 0.5)
-//                let gameScene = GameScene(fileNamed: "DesertGameScene")
-//                self.view?.presentScene(gameScene!, transition: transition)
-//            }
+            if node?.name  == "New_game" || node?.name == "NewGameText" {
+                let gameScene = GameScene(fileNamed: "GameScene")
+                let transition = SKTransition.doorsOpenHorizontal(withDuration: 0.5)
+                self.view?.presentScene(gameScene!, transition: transition)
+                gameScene!.resetGameState()
+            }
         }
     }
     

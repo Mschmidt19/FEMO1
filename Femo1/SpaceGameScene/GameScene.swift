@@ -56,7 +56,7 @@ class GameScene: SKScene {
     }
 
     func createPlayer1() {
-        player1 = SKSpriteNode(imageNamed: "robot1")
+        player1 = SKSpriteNode(imageNamed: "character")
 
         if isKeyPresentInUserDefaults(key: "currentTile") {
             currentTile = userDefaults.integer(forKey: "currentTile")
@@ -78,7 +78,7 @@ class GameScene: SKScene {
     }
     
     func createComputer() {
-        computer = SKSpriteNode(imageNamed: "character")
+        computer = SKSpriteNode(imageNamed: "robot1")
         
         if isKeyPresentInUserDefaults(key: "currentTileComputer") {
             currentTileComputer = userDefaults.integer(forKey: "currentTileComputer")
@@ -180,12 +180,20 @@ class GameScene: SKScene {
         }
     }
 
-    func rollDie() {
+    func rollDie(name: String) {
         let roll = arc4random_uniform(_:6) + 1
-        if indexOfLastTile - currentTile < roll {
-            dieRoll = Int(indexOfLastTile - currentTile)
+        if name == "You" {
+            if indexOfLastTile - currentTile < roll {
+                dieRoll = Int(indexOfLastTile - currentTile)
+            } else {
+            dieRoll = Int(roll)
+            }
         } else {
-        dieRoll = Int(roll)
+            if indexOfLastTile - currentTileComputer < roll {
+                dieRoll = Int(indexOfLastTile - currentTileComputer)
+            } else {
+                dieRoll = Int(roll)
+            }
         }
     }
 
@@ -216,32 +224,36 @@ class GameScene: SKScene {
     }
 
     func playTurn() {
-        rollDie()
+        rollDie(name: "You")
         displayDieRollWithTimer(name: "You")
         var delayAdder = moveDuration
-        for _ in 1 ... dieRoll {
-            DispatchQueue.main.asyncAfter(deadline: .now() + delayAdder) {
-                self.moveToNextTile()
+        if dieRoll > 0 {
+            for _ in 1 ... dieRoll {
+                DispatchQueue.main.asyncAfter(deadline: .now() + delayAdder) {
+                    self.moveToNextTile()
+                }
+                delayAdder += moveDuration
             }
-            delayAdder += moveDuration
-        }
-        DispatchQueue.main.asyncAfter(deadline: .now() + delayAdder + 1.0) {
-            self.playComputerTurn()
+            DispatchQueue.main.asyncAfter(deadline: .now() + delayAdder + 1.0) {
+                self.playComputerTurn()
+            }
         }
     }
     
     func playComputerTurn() {
-        rollDie()
+        rollDie(name: "Computer")
         displayDieRollWithTimer(name: "Computer")
         var delayAdder = moveDuration
-        for _ in 1 ... dieRoll {
-            DispatchQueue.main.asyncAfter(deadline: .now() + delayAdder) {
-                self.moveComputerToNextTile()
+        if dieRoll > 0 {
+            for _ in 1 ... dieRoll {
+                DispatchQueue.main.asyncAfter(deadline: .now() + delayAdder) {
+                    self.moveComputerToNextTile()
+                }
+                delayAdder += moveDuration
             }
-            delayAdder += moveDuration
-        }
-        DispatchQueue.main.asyncAfter(deadline: .now() + delayAdder) {
-            self.userDefaults.set(false, forKey: "turnInProgress")
+            DispatchQueue.main.asyncAfter(deadline: .now() + delayAdder) {
+                self.userDefaults.set(false, forKey: "turnInProgress")
+            }
         }
         
     }
