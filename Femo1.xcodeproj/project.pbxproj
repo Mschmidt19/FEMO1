@@ -17,6 +17,7 @@
 		3BEC9C12215A7EA200000EAB /* LostGame.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3BEC9C11215A7EA200000EAB /* LostGame.sks */; };
 		3BEC9C15215BE32100000EAB /* Main_pageUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BEC9C14215BE32100000EAB /* Main_pageUITests.swift */; };
 		3BEC9C17215BE3B300000EAB /* GameSceneUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BEC9C16215BE3B300000EAB /* GameSceneUITests.swift */; };
+		3BEC9C19215BF22A00000EAB /* InformationSceneUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BEC9C18215BF22A00000EAB /* InformationSceneUITests.swift */; };
 		84B3E93C215A532B000C6779 /* Main_page.sks in Resources */ = {isa = PBXBuildFile; fileRef = 84B3E93B215A532B000C6779 /* Main_page.sks */; };
 		84B3E93E215A5351000C6779 /* Information.sks in Resources */ = {isa = PBXBuildFile; fileRef = 84B3E93D215A5351000C6779 /* Information.sks */; };
 		EA106961215A4BB100088C45 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA10693F215A4BAE00088C45 /* AppDelegate.swift */; };
@@ -73,6 +74,7 @@
 		3BEC9C11215A7EA200000EAB /* LostGame.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LostGame.sks; sourceTree = "<group>"; };
 		3BEC9C14215BE32100000EAB /* Main_pageUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main_pageUITests.swift; sourceTree = "<group>"; };
 		3BEC9C16215BE3B300000EAB /* GameSceneUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSceneUITests.swift; sourceTree = "<group>"; };
+		3BEC9C18215BF22A00000EAB /* InformationSceneUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationSceneUITests.swift; sourceTree = "<group>"; };
 		84B3E93B215A532B000C6779 /* Main_page.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Main_page.sks; sourceTree = "<group>"; };
 		84B3E93D215A5351000C6779 /* Information.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Information.sks; sourceTree = "<group>"; };
 		EA10693E215A4BAD00088C45 /* Femo1-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Femo1-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 				3BBFD132215A3DF700CC1D2F /* Femo1UITests.swift */,
 				3BEC9C14215BE32100000EAB /* Main_pageUITests.swift */,
 				3BEC9C16215BE3B300000EAB /* GameSceneUITests.swift */,
+				3BEC9C18215BF22A00000EAB /* InformationSceneUITests.swift */,
 				3BBFD134215A3DF700CC1D2F /* Info.plist */,
 			);
 			path = Femo1UITests;
@@ -439,6 +442,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3BBFD133215A3DF700CC1D2F /* Femo1UITests.swift in Sources */,
+				3BEC9C19215BF22A00000EAB /* InformationSceneUITests.swift in Sources */,
 				3BEC9C15215BE32100000EAB /* Main_pageUITests.swift in Sources */,
 				3BEC9C17215BE3B300000EAB /* GameSceneUITests.swift in Sources */,
 			);

@@ -33,10 +33,16 @@ class GameSceneUITests: XCTestCase {
             
         }
     
-    func testMenuButton(){
-        let app = XCUIApplication()
-        let menuButton = app.otherElements["Menu"]
-        XCTAssertTrue(menuButton.isHittable)
-    }
+        func testMenuButton(){
+            let app = XCUIApplication()
+            let menuButton = app.otherElements["Menu"]
+            XCTAssertTrue(menuButton.isHittable)
+        }
+    
+        func testInformationButton(){
+            let app = XCUIApplication()
+            let informationButton = app.otherElements["Information"]
+            XCTAssertTrue(informationButton.isHittable)
+        }
     
 }

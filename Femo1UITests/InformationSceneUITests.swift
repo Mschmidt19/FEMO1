@@ -1,5 +1,5 @@
 //
-//  Main_pageUITests.swift
+//  InformationSceneUITests.swift
 //  Femo1UITests
 //
 //  Created by Farah Jabri on 26/09/2018.
@@ -8,17 +8,17 @@
 
 import XCTest
 
-class Main_pageUITests: XCTestCase {
-    
+class InformationSceneUITests: XCTestCase {
+        
     override func setUp() {
         super.setUp()
-
         continueAfterFailure = false
         
         let app = XCUIApplication()
         app.launchArguments = ["enable-testing"]
         app.launch()
-
+        app.otherElements["New Game"].tap()
+        app.otherElements["Information"].tap()
     }
     
     override func tearDown() {
@@ -26,16 +26,16 @@ class Main_pageUITests: XCTestCase {
         super.tearDown()
     }
     
-    func testResumeButtonIsHittable() {
+    func testMenuButton(){
         let app = XCUIApplication()
-        let resumeGameButton = app.otherElements["Resume"]
-        XCTAssertTrue(resumeGameButton.isHittable)
+        let menuButton = app.otherElements["Menu"]
+        XCTAssertTrue(menuButton.isHittable)
     }
     
-    func testNewGameButtonIsHittable() {
+    func testResumeButtonIsHittable() {
         let app = XCUIApplication()
-        let newGameButton = app.otherElements["New Game"]
-        XCTAssertTrue(newGameButton.isHittable)
+        let resumeGameButton = app.otherElements["ResumeGame"]
+        XCTAssertTrue(resumeGameButton.isHittable)
     }
     
 }

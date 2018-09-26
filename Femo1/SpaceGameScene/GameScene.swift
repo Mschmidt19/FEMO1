@@ -454,7 +454,7 @@ class GameScene: SKScene {
                 }
             } else if node?.name == "Menu_button" || node?.name == "Menu"{
                 goToHomeScene()
-            } else if node?.name == "Information_button" {
+            } else if node?.name == "Information_button" || node?.name == "InformationTextLabel"{
                 goToInfoScene()
             }
         }

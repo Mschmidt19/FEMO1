@@ -29,11 +29,11 @@ class InformationScene: SKScene {
         if let location = touch?.location(in: self) {
             let node = self.nodes(at: location)
             
-          if node.first?.name == "Menu_button" {
+          if node.first?.name == "Menu_button" || node.first?.name == "MenuLabelText" {
                 let transition = SKTransition.doorsCloseHorizontal(withDuration: 0.5)
                 let menuPage = Main_page(fileNamed: "Main_page")
                 self.view?.presentScene(menuPage!, transition: transition)
-          } else if node.first?.name  == "Play_button" {
+          } else if node.first?.name  == "Play_button" || node.first?.name == "ResumeGameLabelText"{
                 let transition = SKTransition.doorsOpenHorizontal(withDuration: 0.5)
                 let gameScene = GameScene(fileNamed: "GameScene")
                 self.view?.presentScene(gameScene!, transition: transition)
