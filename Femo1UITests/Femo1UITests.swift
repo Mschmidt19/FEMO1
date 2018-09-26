@@ -34,8 +34,20 @@ class Femo1UITests: XCTestCase {
   
         
         let app = XCUIApplication()
-
+        app.otherElements["New Game"].tap()
         
+        let rollDiceElement = app.otherElements["Roll Dice"]
+        rollDiceElement.tap()
+        app.otherElements["Groovy"].tap()
+        rollDiceElement.tap()
+        app.otherElements["RSpec"].tap()
+        app.children(matching: .window).element(boundBy: 0).children(matching: .other).element.tap()
+        app.otherElements["Internet Protocol"].tap()
+        rollDiceElement.tap()
+        app.otherElements["Personal Home Page"].tap()
+        rollDiceElement.tap()
+        app.otherElements["Ruby"].tap()
+ 
         
     }
     
