@@ -9,6 +9,8 @@
 import SpriteKit
 
 class Main_page: SKScene {
+    
+    var accessibleElements: [UIAccessibilityElement] = []
 
     let userDefaults = UserDefaults.standard
     var ResumeGameNode: SKSpriteNode!

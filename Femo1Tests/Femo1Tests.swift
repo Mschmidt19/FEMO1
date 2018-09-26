@@ -21,21 +21,11 @@ class Femo1Tests: XCTestCase {
         super.tearDown()
     }
     
-    func testEmailText() {
-        let result = 1 + 1
-        XCTAssertEqual(result, 2)
-    }
-
-    
     func testPerformanceExample() {
         // This is an example of a performance test case.
         self.measure {
             // Put the code you want to measure the time of here.
         }
-    }
-    
-    func nodeElementExists() {
-        
     }
     
     

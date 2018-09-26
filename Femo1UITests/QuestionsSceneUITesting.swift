@@ -1,12 +1,15 @@
 //
-//  QuestionSceneUITests.swift
+//  QuestionsUITesting.swift
 //  Femo1UITests
+//
+//  Created by Farah Jabri on 26/09/2018.
+//  Copyright © 2018 FEMO@Makers. All rights reserved.
 //
 
 import XCTest
 
-class QuestionSceneUITests: XCTestCase {
-
+class QuestionsUITesting: XCTestCase {
+        
     override func setUp() {
         super.setUp()
         continueAfterFailure = false
@@ -18,7 +21,6 @@ class QuestionSceneUITests: XCTestCase {
         app.otherElements["Roll Dice"].tap()
     }
     
-    
     override func tearDown() {
         super.tearDown()
     }
@@ -28,8 +30,9 @@ class QuestionSceneUITests: XCTestCase {
         let Button1 = app.buttons["button1Background"]
         XCTAssertTrue(Button1.isHittable)
     }
-
-
+    
+    
+    
     func testAnswer1ButtonIsHittable() {
         let app = XCUIApplication()
         let button1Text = app.buttons["button1Text"]
