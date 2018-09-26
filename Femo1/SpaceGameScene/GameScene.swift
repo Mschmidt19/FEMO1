@@ -18,17 +18,17 @@ class GameScene: SKScene {
     var tilesArray:[SKSpriteNode]? = [SKSpriteNode]()
     var player1:SKSpriteNode?
     var computer:SKSpriteNode?
-    
+
     var blackhole1:SKSpriteNode?
     var blackhole2:SKSpriteNode?
     var blackholeLocations = [Int]()
-    
+
     var currentTile = 0
     var currentTileComputer = 0
-    
+
     var movingToTile = false
     var computerMovingToTile = false
-    
+
     var moveDuration = 0.4
     var indexOfLastTile = 0
     var arrsize: Int{
@@ -38,7 +38,7 @@ class GameScene: SKScene {
     }
 
     var dieRoll = 0
-    
+
     let tilePenalty = 3
 
     let textDisappearTimer = 4.0
@@ -60,7 +60,7 @@ class GameScene: SKScene {
             }
         }
     }
-    
+
     func setupBlackholes() {
         blackhole1 = SKSpriteNode(imageNamed: "blackhole")
         blackhole1?.size.height = 25.0
@@ -68,15 +68,15 @@ class GameScene: SKScene {
         blackhole2 = SKSpriteNode(imageNamed: "blackhole")
         blackhole2?.size.height = 25.0
         blackhole2?.size.width = 25.0
-        
+
         var location1: Int
         var location2: Int
         if isKeyPresentInUserDefaults(key: "blackholeLocations") {
             blackholeLocations = (userDefaults.array(forKey: "blackholeLocations") as! [Int])
             location1 = blackholeLocations[0]
             location2 = blackholeLocations[1]
-            
-            
+
+
         } else {
             location1 = (Int(arc4random_uniform(UInt32(tilesArray!.count - tilePenalty - 2))) + tilePenalty)
             location2 = location1
@@ -86,7 +86,7 @@ class GameScene: SKScene {
             blackholeLocations.append(location1)
             blackholeLocations.append(location2)
         }
-        
+
         guard let blackhole1PositionX = tilesArray?[location1].position.x else {return}
         guard let blackhole1PositionY = tilesArray?[location1].position.y else {return}
         guard let blackhole2PositionX = tilesArray?[location2].position.x else {return}
@@ -94,7 +94,7 @@ class GameScene: SKScene {
 
         blackhole1?.position = CGPoint(x: blackhole1PositionX, y: blackhole1PositionY)
         blackhole2?.position = CGPoint(x: blackhole2PositionX, y: blackhole2PositionY)
-        
+
         self.addChild(blackhole1!)
         self.addChild(blackhole2!)
     }
@@ -117,33 +117,33 @@ class GameScene: SKScene {
         } else {
             player1?.xScale = 1.0
         }
-        
+
         player1?.zPosition = 5
 
         self.addChild(player1!)
     }
-    
+
     func createComputer() {
         computer = SKSpriteNode(imageNamed: "robot1")
-        
+
         if isKeyPresentInUserDefaults(key: "currentTileComputer") {
             currentTileComputer = userDefaults.integer(forKey: "currentTileComputer")
         } else {
             currentTileComputer = 0
         }
-        
+
         guard let computerPositionX = tilesArray?[currentTileComputer].position.x else {return}
         guard let computerPositionY = tilesArray?[currentTileComputer].position.y else {return}
         computer?.position = CGPoint(x: computerPositionX, y: computerPositionY + 15)
-        
+
         if isKeyPresentInUserDefaults(key: "computerXScale") {
             computer?.xScale = CGFloat(userDefaults.integer(forKey: "computerXScale"))
         } else {
             computer?.xScale = 1.0
         }
-        
+
         computer?.zPosition = 4
-        
+
         self.addChild(computer!)
     }
 
@@ -160,7 +160,7 @@ class GameScene: SKScene {
         menu_buttonNode.texture = SKTexture(imageNamed: "menu_button")
         InformationNode = (self.childNode(withName: "Information_button") as! SKSpriteNode)
         InformationNode.texture = SKTexture(imageNamed: "information_button")
-        
+
         indexOfLastTile = (tilesArray?.index{$0 === tilesArray?.last})!
 
         dieRollLabel = (self.childNode(withName: "dieRollLabel") as! SKLabelNode)
@@ -188,91 +188,95 @@ class GameScene: SKScene {
             player1?.xScale = -1.0
         } else if nextTile == self.childNode(withName: "tile16") {
             player1?.xScale = 1.0
+        } else if nextTile == self.childNode(withName: "tile30") {
+            wonGame()
         }
-        
+
         if let player1 = self.player1 {
             currentTile += 1
-            
+
             let moveAction = SKAction.move(to: CGPoint(x: nextTile.position.x, y: nextTile.position.y + 15), duration: moveDuration)
             player1.run(moveAction, completion: {
                 self.movingToTile = false
             })
-            
+
             self.run(moveSound)
         }
     }
-    
+
     func moveToPreviousTile() {
         player1?.removeAllActions()
         movingToTile = true
-        
+
         guard let previousTile = tilesArray?[currentTile - 1] else {return}
-        
-        
+
+
         if previousTile == self.childNode(withName: "tile7") {
             player1?.xScale = 1.0
         } else if previousTile == self.childNode(withName: "tile16") {
             player1?.xScale = -1.0
         }
-        
+
         if let player1 = self.player1 {
             currentTile -= 1
-            
+
             let moveAction = SKAction.move(to: CGPoint(x: previousTile.position.x, y: previousTile.position.y + 15), duration: moveDuration)
             player1.run(moveAction, completion: {
                 self.movingToTile = false
             })
-            
+
             self.run(moveSound)
         }
     }
-    
+
     func moveComputerToNextTile() {
         computer?.removeAllActions()
         computerMovingToTile = true
-        
+
         guard let nextTileComputer = tilesArray?[currentTileComputer + 1] else {return}
-        
-        
+
+
         if nextTileComputer == self.childNode(withName: "tile7") {
             computer?.xScale = -1.0
         } else if nextTileComputer == self.childNode(withName: "tile16") {
             computer?.xScale = 1.0
+        } else if nextTileComputer == self.childNode(withName: "tile30") {
+            lostGame()
         }
-        
+
         if let computer = self.computer {
             currentTileComputer += 1
-            
+
             let moveAction = SKAction.move(to: CGPoint(x: nextTileComputer.position.x, y: nextTileComputer.position.y + 15), duration: moveDuration)
             computer.run(moveAction, completion: {
                 self.computerMovingToTile = false
             })
-            
+
             self.run(moveSound)
         }
     }
-    
+
     func moveComputerToPreviousTile() {
         computer?.removeAllActions()
         computerMovingToTile = true
-        
+
         guard let previousTile = tilesArray?[currentTileComputer - 1] else {return}
-        
-        
+
+
         if previousTile == self.childNode(withName: "tile7") {
             computer?.xScale = 1.0
         } else if previousTile == self.childNode(withName: "tile16") {
             computer?.xScale = -1.0
         }
-        
+
         if let computer = self.computer {
             currentTileComputer -= 1
-            
+
             let moveAction = SKAction.move(to: CGPoint(x: previousTile.position.x, y: previousTile.position.y + 15), duration: moveDuration)
             computer.run(moveAction, completion: {
                 self.movingToTile = false
             })
-            
+
             self.run(moveSound)
         }
     }
@@ -301,7 +305,7 @@ class GameScene: SKScene {
             self.dieRollLabel.text = ""
         }
     }
-    
+
     func displayBlackholePenaltyWithTimer(name: String) {
         dieRollLabel.fontSize = 20.0
         dieRollLabel.text = "\(name) landed on a black hole!"
@@ -330,7 +334,6 @@ class GameScene: SKScene {
     }
 
     func playTurn() {
-        print(blackholeLocations)
         rollDie(name: "You")
         displayDieRollWithTimer(name: "You")
         var delayAdder = moveDuration
@@ -341,14 +344,14 @@ class GameScene: SKScene {
                 }
                 delayAdder += moveDuration
             }
-            
+
             DispatchQueue.main.asyncAfter(deadline: .now() + delayAdder + 1.0) {
                 print("player: \(self.currentTile)")
                 if self.blackholeLocations.contains(self.currentTile) {
                     self.displayBlackholePenaltyWithTimer(name: "You")
                     self.goBackXTiles(number: self.tilePenalty, character: self.player1!)
                     delayAdder += (Double(self.tilePenalty) * self.moveDuration)
-                    
+
                     DispatchQueue.main.asyncAfter(deadline: .now() + delayAdder - 2.0) {
                         self.playComputerTurn()
                     }
@@ -360,7 +363,7 @@ class GameScene: SKScene {
             }
         }
     }
-    
+
     func playComputerTurn() {
         rollDie(name: "Computer")
         displayDieRollWithTimer(name: "Computer")
@@ -378,7 +381,7 @@ class GameScene: SKScene {
                     self.displayBlackholePenaltyWithTimer(name: "Computer")
                     self.goBackXTiles(number: self.tilePenalty, character: self.computer!)
                     delayAdder += (Double(self.tilePenalty) * self.moveDuration)
-                    
+
                     DispatchQueue.main.asyncAfter(deadline: .now() + delayAdder - 2.0) {
                         self.userDefaults.set(false, forKey: "turnInProgress")
                     }
@@ -389,9 +392,9 @@ class GameScene: SKScene {
                 }
             }
         }
-        
+
     }
-    
+
     func goBackXTiles(number: Int, character: SKSpriteNode) {
         var delayAdder = moveDuration
         if character == player1 {
@@ -409,7 +412,7 @@ class GameScene: SKScene {
                 delayAdder += moveDuration
             }
         }
-        
+
     }
 
     func askQuestion() {
@@ -419,14 +422,14 @@ class GameScene: SKScene {
         let questionScene = GameScene(fileNamed: "QuestionScene")
         self.view?.presentScene(questionScene!, transition: transition)
     }
-    
+
     func goToInfoScene() {
         saveGameState()
         let transition = SKTransition.doorsCloseHorizontal(withDuration: 0.5)
         let information = InformationScene(fileNamed: "Information")
         self.view?.presentScene(information!, transition: transition)
     }
-    
+
     func goToHomeScene() {
         saveGameState()
         let transition = SKTransition.doorsCloseHorizontal(withDuration: 0.5)
@@ -461,6 +464,18 @@ class GameScene: SKScene {
         }
     }
 
+    func wonGame() {
+        let transition = SKTransition.flipVertical(withDuration: 0.5)
+        let wongame = WonGame(fileNamed: "WonGame")
+        self.view?.presentScene(wongame!, transition: transition)
+    }
+
+    func lostGame() {
+        let transition = SKTransition.flipVertical(withDuration: 0.5)
+        let lostgame = LostGame(fileNamed: "LostGame")
+        self.view?.presentScene(lostgame!, transition: transition)
+    }
+
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         if !movingToTile {
             player1?.removeAllActions()
@@ -482,15 +497,15 @@ class GameScene: SKScene {
         print("resetting game state")
         let bundleIdentifier = Bundle.main.bundleIdentifier!
         userDefaults.removePersistentDomain(forName: bundleIdentifier)
-        
+
         currentTile = 0
         player1?.position = CGPoint(x: tilesArray!.first!.position.x, y: tilesArray!.first!.position.y + 15)
         player1?.xScale = 1
         currentTileComputer = 0
         computer?.position = CGPoint(x: tilesArray!.first!.position.x, y: tilesArray!.first!.position.y + 15)
         computer?.xScale = 1
-        
-        
+
+
         var location1: Int
         var location2: Int
         location1 = (Int(arc4random_uniform(UInt32(tilesArray!.count - tilePenalty))) + tilePenalty)
@@ -498,20 +513,20 @@ class GameScene: SKScene {
         while location2 == location1 {
             location2 = (Int(arc4random_uniform(UInt32(tilesArray!.count - tilePenalty - 1))) + tilePenalty)
         }
-        
+
         guard let blackhole1PositionX = tilesArray?[location1].position.x else {return}
         guard let blackhole1PositionY = tilesArray?[location1].position.y else {return}
         guard let blackhole2PositionX = tilesArray?[location2].position.x else {return}
         guard let blackhole2PositionY = tilesArray?[location2].position.y else {return}
-        
+
         blackhole1?.position = CGPoint(x: blackhole1PositionX, y: blackhole1PositionY)
         blackhole2?.position = CGPoint(x: blackhole2PositionX, y: blackhole2PositionY)
-        
+
         blackholeLocations = [Int]()
         blackholeLocations.append(location1)
         blackholeLocations.append(location2)
     }
-    
+
 //    func resetGameState() {
 //        let defaults = UserDefaults.standard
 //        let dictionary = defaults.dictionaryRepresentation()
