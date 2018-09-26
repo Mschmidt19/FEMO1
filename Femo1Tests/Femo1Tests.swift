@@ -21,10 +21,11 @@ class Femo1Tests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testEmailText() {
+        let result = 1 + 1
+        XCTAssertEqual(result, 2)
     }
+
     
     func testPerformanceExample() {
         // This is an example of a performance test case.
@@ -32,5 +33,10 @@ class Femo1Tests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
+    
+    func nodeElementExists() {
+        
+    }
+    
     
 }
