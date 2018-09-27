@@ -29,5 +29,22 @@ class Femo1UITests: XCTestCase {
         super.tearDown()
     }
     
+    func testHello() {
+        
+        
+        let app = XCUIApplication()
+        app.buttons["NewGame"].tap()
+        
+        let element = app.children(matching: .window).element(boundBy: 0).children(matching: .other).element
+        element.tap()
+        app.buttons["ResumeGameText"].tap()
+        app.buttons["nextTileButton"].tap()
+        element.tap()
+        element.tap()
+        app/*@START_MENU_TOKEN@*/.buttons["Play_button"]/*[[".otherElements[\"InformationScene\"].buttons[\"Play_button\"]",".buttons[\"Play_button\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        element.tap()
+
+        
+    }
 
 }

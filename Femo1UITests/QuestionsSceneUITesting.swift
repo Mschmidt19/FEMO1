@@ -17,8 +17,8 @@ class QuestionsUITesting: XCTestCase {
         let app = XCUIApplication()
         app.launchArguments = ["enable-testing"]
         app.launch()
-        app.otherElements["New Game"].tap()
-        app.otherElements["Roll Dice"].tap()
+        app.buttons["NewGame"].tap()
+        app.buttons["nextTileButton"].tap()
     }
     
     override func tearDown() {

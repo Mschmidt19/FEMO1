@@ -17,8 +17,8 @@ class InformationSceneUITests: XCTestCase {
         let app = XCUIApplication()
         app.launchArguments = ["enable-testing"]
         app.launch()
-        app.otherElements["New Game"].tap()
-        app.otherElements["Information"].tap()
+        app.buttons["NewGame"].tap()
+        app.buttons["Information_button"].tap()
     }
     
     override func tearDown() {
@@ -32,7 +32,7 @@ class InformationSceneUITests: XCTestCase {
     }
     
     
-    func testResumeButtonIsHittable() {
+    func testResumeButtonIsHittable(){
         let app = XCUIApplication()
         let resumeGameButton = app.buttons["Play_button"]
         XCTAssertTrue(resumeGameButton.isHittable)

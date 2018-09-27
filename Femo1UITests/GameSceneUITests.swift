@@ -18,7 +18,7 @@ class GameSceneUITests: XCTestCase {
             let app = XCUIApplication()
             app.launchArguments = ["enable-testing"]
             app.launch()
-            app.otherElements["New Game"].tap()
+            app.buttons["NewGame"].tap()
             
         }
         
@@ -28,20 +28,20 @@ class GameSceneUITests: XCTestCase {
         
         func testnextTileButtonIsHittable() {
             let app = XCUIApplication()
-            let nextTileButton = app.otherElements["Roll Dice"]
+            let nextTileButton = app.buttons["nextTileButton"]
             XCTAssertTrue(nextTileButton.isHittable)
             
         }
     
         func testMenuButton(){
             let app = XCUIApplication()
-            let menuButton = app.otherElements["Menu"]
+            let menuButton = app.buttons["Menu_button"]
             XCTAssertTrue(menuButton.isHittable)
         }
     
         func testInformationButton(){
             let app = XCUIApplication()
-            let informationButton = app.otherElements["Information"]
+            let informationButton = app.buttons["Information_button"]
             XCTAssertTrue(informationButton.isHittable)
         }
     

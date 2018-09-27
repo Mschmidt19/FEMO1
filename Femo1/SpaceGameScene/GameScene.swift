@@ -14,15 +14,15 @@ class GameScene: SKScene {
     let userDefaults = UserDefaults.standard
 
     var viewController: GameViewController!
-
+    var accessibleElements: [UIAccessibilityElement] = []
     var tilesArray:[SKSpriteNode]? = [SKSpriteNode]()
     var player1:SKSpriteNode?
     var computer:SKSpriteNode?
-
+    var nextTileButtonNode: SKSpriteNode!
     var blackhole1:SKSpriteNode?
     var blackhole2:SKSpriteNode?
     var blackholeLocations = [Int]()
-
+    
     var currentTile = 0
     var currentTileComputer = 0
 
@@ -31,26 +31,26 @@ class GameScene: SKScene {
 
     var moveDuration = 0.4
     var indexOfLastTile = 0
+    var dieRoll = 0
+    
+    var questionInProgress = false
+    var starField: SKEmitterNode!
+    var lastAnswerLabel: SKLabelNode!
+    var dieRollLabel: SKLabelNode!
+    
+    var menu_buttonNode:SKSpriteNode!
+    var InformationNode:SKSpriteNode!
+    
     var arrsize: Int{
         get {
             return tilesArray!.count
         }
     }
 
-    var dieRoll = 0
-
     let tilePenalty = 3
 
     let textDisappearTimer = 4.0
-
-    var questionInProgress = false
-
-    var starField: SKEmitterNode!
-    var lastAnswerLabel: SKLabelNode!
-    var dieRollLabel: SKLabelNode!
-    var menu_buttonNode:SKSpriteNode!
-    var InformationNode:SKSpriteNode!
-
+    
     let moveSound = SKAction.playSoundFileNamed("tap.wav", waitForCompletion: false)
 
     func setupTiles() {
@@ -156,11 +156,16 @@ class GameScene: SKScene {
 
         starField = (self.childNode(withName: "starField") as! SKEmitterNode)
         starField.advanceSimulationTime(14)
+        nextTileButtonNode = (self.childNode(withName: "nextTileButton") as! SKSpriteNode)
         menu_buttonNode = (self.childNode(withName: "Menu_button") as! SKSpriteNode)
         menu_buttonNode.texture = SKTexture(imageNamed: "menu_button")
         InformationNode = (self.childNode(withName: "Information_button") as! SKSpriteNode)
         InformationNode.texture = SKTexture(imageNamed: "information_button")
 
+        nextTileButtonNode.isAccessibilityElement = true
+        menu_buttonNode.isAccessibilityElement = true
+        InformationNode.isAccessibilityElement = true
+        
         indexOfLastTile = (tilesArray?.index{$0 === tilesArray?.last})!
 
         dieRollLabel = (self.childNode(withName: "dieRollLabel") as! SKLabelNode)
@@ -442,19 +447,23 @@ class GameScene: SKScene {
             return false
         }
     }
-
+    
+    override func willMove(from view: SKView) {
+        accessibleElements.removeAll()
+    }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if let touch = touches.first {
             let location = touch.previousLocation(in: self)
             let node = self.nodes(at: location).first
 
-            if node?.name == "nextTileButton" || node?.name == "NextMoveTextLabel"{
+            if node?.name == "nextTileButton" {
                 if userDefaults.bool(forKey: "turnInProgress") == false {
                    askQuestion()
                 }
-            } else if node?.name == "Menu_button" || node?.name == "Menu"{
+            } else if node?.name == "Menu_button" {
                 goToHomeScene()
-            } else if node?.name == "Information_button" || node?.name == "InformationTextLabel"{
+            } else if node?.name == "Information_button" {
                 goToInfoScene()
             }
         }
@@ -533,5 +542,58 @@ class GameScene: SKScene {
 
     func isKeyPresentInUserDefaults(key: String) -> Bool {
         return userDefaults.object(forKey: key) != nil
+    }
+    
+    override func accessibilityElementCount() -> Int {
+        initAccessibility()
+        return accessibleElements.count
+    }
+    
+    override func accessibilityElement(at index: Int) -> Any? {
+        
+        initAccessibility()
+        if (index < accessibleElements.count) {
+            return accessibleElements[index]
+        } else {
+            return nil
+        }
+    }
+    
+    override func index(ofAccessibilityElement element: Any) -> Int {
+        initAccessibility()
+        return accessibleElements.index(of: element as! UIAccessibilityElement)!
+    }
+    
+    func initAccessibility() {
+        
+        if accessibleElements.count == 0 {
+            
+            let elementFornextTileButtonNode = UIAccessibilityElement(accessibilityContainer: self.view!)
+            var frameFornextTileButtonNode = nextTileButtonNode.frame
+            frameFornextTileButtonNode.origin = (view?.convert(frameFornextTileButtonNode.origin, from: self))!
+            frameFornextTileButtonNode.origin.y = frameFornextTileButtonNode.origin.y - frameFornextTileButtonNode.size.height
+            elementFornextTileButtonNode.accessibilityIdentifier   = "nextTileButton"
+            elementFornextTileButtonNode.accessibilityFrame   = frameFornextTileButtonNode
+            elementFornextTileButtonNode.accessibilityTraits  = UIAccessibilityTraitButton
+            accessibleElements.append(elementFornextTileButtonNode)
+            
+            let elementFormenu_buttonNode = UIAccessibilityElement(accessibilityContainer: self.view!)
+            var frameFormenu_buttonNode = nextTileButtonNode.frame
+            frameFormenu_buttonNode.origin = (view?.convert(frameFormenu_buttonNode.origin, from: self))!
+            frameFormenu_buttonNode.origin.y = frameFormenu_buttonNode.origin.y - frameFormenu_buttonNode.size.height
+            elementFormenu_buttonNode.accessibilityIdentifier   = "Menu_button"
+            elementFormenu_buttonNode.accessibilityFrame   = frameFornextTileButtonNode
+            elementFormenu_buttonNode.accessibilityTraits  = UIAccessibilityTraitButton
+            accessibleElements.append(elementFormenu_buttonNode)
+            
+            let elementForInformationNode = UIAccessibilityElement(accessibilityContainer: self.view!)
+            var frameForInformationNode = InformationNode.frame
+            frameForInformationNode.origin = (view?.convert(frameForInformationNode.origin, from: self))!
+            frameForInformationNode.origin.y = frameForInformationNode.origin.y - frameForInformationNode.size.height
+            elementForInformationNode.accessibilityIdentifier   = "Information_button"
+            elementForInformationNode.accessibilityFrame   = frameForInformationNode
+            elementForInformationNode.accessibilityTraits  = UIAccessibilityTraitButton
+            accessibleElements.append(elementForInformationNode)
+        }
     }
 }
