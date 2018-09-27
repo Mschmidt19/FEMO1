@@ -30,7 +30,7 @@ class QuestionList {
         
         list.append(Question(questionText: "What is API short for?", choiceA: "Application Programming Interface", choiceB: "Application Programming Information", choiceC: "Apply Programming Interface", choiceD: "Applying Programme Interface", answer: 1))
         
-        list.append(Question(questionText: "Which command in HTML is used for largest heading?", choiceA: "<h6>", choiceB: "<a>", choiceC: "<h1.", choiceD: "<body>", answer: 3))
+        list.append(Question(questionText: "Which command in HTML is used for largest heading?", choiceA: "<h6>", choiceB: "<a>", choiceC: "<h1>", choiceD: "<body>", answer: 3))
         
         list.append(Question(questionText: "Which language does Angular JS use? ", choiceA: "Java", choiceB: "Javascript", choiceC: "Ruby", choiceD: "Scala", answer: 2))
         
@@ -44,7 +44,7 @@ class QuestionList {
         
         list.append(Question(questionText: "Which of the following is NOT a backend language?", choiceA: "CSS", choiceB: "Java", choiceC: "Ruby", choiceD: "Perl", answer: 1))
         
-//        list.append(Question(questionText: "In the command line, what does 'cat' do?", choiceA: "String1", choiceB: "String2", choiceC: "String3", choiceD: "String4", answer: 1))
+        list.append(Question(questionText: "In the command line, what does 'cat' do?", choiceA: "Make a new directory", choiceB: "List directories", choiceC: "Move up one directory", choiceD: "List the contents of a file", answer: 4))
         
         list.append(Question(questionText: "In the command line, what does 'cd..' do?", choiceA: "List directories", choiceB: "Make a new directory", choiceC: "Move up one directory", choiceD: "List the contents of a file", answer: 3))
         
@@ -64,7 +64,7 @@ class QuestionList {
         
         list.append(Question(questionText: "In all programming languages, what does 'int' stand for?", choiceA: "Internet", choiceB: "Integer", choiceC: "Initialize", choiceD: "Internal", answer: 2))
         
-//        list.append(Question(questionText: "What symbol in Javascript seperates statements?", choiceA: "String1", choiceB: "String2", choiceC: "String3", choiceD: "String4", answer: 1))
+        list.append(Question(questionText: "What symbol in Javascript seperates statements?", choiceA: ":", choiceB: ";", choiceC: "{}", choiceD: "%", answer: 1))
         
         list.append(Question(questionText: "What does the symbol modulo do?", choiceA: "Adds two integers together", choiceB: "Multiplies an array", choiceC: "Gives you the total", choiceD: "Finds the remainder", answer: 4))
         
