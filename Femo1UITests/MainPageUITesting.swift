@@ -27,14 +27,20 @@ class MainPageUITesting: XCTestCase {
     
     func testResumeButtonIsHittable() {
         let app = XCUIApplication()
-        let resumeGameButton = app.otherElements["Resume"]
+        let resumeGameButton = app.buttons["ResumeGame"]
+        let resumeGameText = app.buttons["ResumeGameText"]
         XCTAssertTrue(resumeGameButton.isHittable)
+        XCTAssertTrue(resumeGameText.isHittable)
         
     }
     
+    
+    
     func testNewGameButtonIsHittable() {
         let app = XCUIApplication()
-        let newGameButton = app.otherElements["New Game"]
+        let newGameButton = app.buttons["NewGame"]
+        let newGameText = app.buttons["NewGameText"]
+        XCTAssertTrue(newGameText.isHittable)
         XCTAssertTrue(newGameButton.isHittable)
     }
     

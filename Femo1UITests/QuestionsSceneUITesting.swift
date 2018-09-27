@@ -27,19 +27,12 @@ class QuestionsUITesting: XCTestCase {
     
     func testButton1IsHittable() {
         let app = XCUIApplication()
-        let Button1 = app.buttons["button1Background"]
-        XCTAssertTrue(Button1.isHittable)
-    }
-    
-    
-    
-    func testAnswer1ButtonIsHittable() {
-        let app = XCUIApplication()
         let button1Text = app.buttons["button1Text"]
         let button1Background = app.buttons["button1Background"]
         XCTAssertTrue(button1Text.isHittable)
         XCTAssertTrue(button1Background.isHittable)
     }
+    
     
     func testAnswer2ButtonIsHittable() {
         let app = XCUIApplication()
