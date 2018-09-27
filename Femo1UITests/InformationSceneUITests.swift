@@ -27,8 +27,8 @@ class InformationSceneUITests: XCTestCase {
     
     func testMenuButton(){
         let app = XCUIApplication()
-        let menuButton = app.buttons["Menu_button"]
-        XCTAssertTrue(menuButton.isHittable)
+        let menubutton2 = app.otherElements["InformationScene"].buttons["Menu_button"]
+        XCTAssertTrue(menubutton2.isHittable)
     }
     
     

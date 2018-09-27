@@ -304,7 +304,7 @@ class GameScene: SKScene {
     }
 
     func displayDieRollWithTimer(name: String) {
-        dieRollLabel.fontSize = 28.0
+        dieRollLabel.fontSize = 25.0
         dieRollLabel.text = "\(name) rolled a \(dieRoll)"
         DispatchQueue.main.asyncAfter(deadline: .now() + textDisappearTimer) {
             self.dieRollLabel.text = ""
@@ -323,9 +323,11 @@ class GameScene: SKScene {
         if userDefaults.bool(forKey: "turnInProgress") {
             if isKeyPresentInUserDefaults(key: "lastAnswerCorrect") {
                 if userDefaults.bool(forKey: "lastAnswerCorrect") == true {
+                    lastAnswerLabel.fontSize = 28.0
                     lastAnswerLabel.fontColor = SKColor.green
                     lastAnswerLabel.text = "Correct"
                 } else {
+                    lastAnswerLabel.fontSize = 28.0
                     lastAnswerLabel.fontColor = SKColor.red
                     lastAnswerLabel.text = "Incorrect"
                 }
