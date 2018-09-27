@@ -15,7 +15,7 @@ class WonGame: SKScene {
     var starField: SKEmitterNode!
     let userDefaults = UserDefaults.standard
     
-    let wonSound = SKAction.playSoundFileNamed("tap.wav", waitForCompletion: false)
+    let wonSound = SKAction.playSoundFileNamed("TaDa-Sound.wav", waitForCompletion: false)
     
     override func didMove(to view: SKView) {
         

@@ -51,7 +51,7 @@ class GameScene: SKScene {
 
     let textDisappearTimer = 4.0
     
-    let moveSound = SKAction.playSoundFileNamed("TaDa-Sound.wav", waitForCompletion: false)
+    let moveSound = SKAction.playSoundFileNamed("tap.wav", waitForCompletion: false)
 
     func setupTiles() {
         for i in 1...100 {
