@@ -26,7 +26,7 @@
 		EA106966215A4BB100088C45 /* InformationScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA106946215A4BAE00088C45 /* InformationScene.swift */; };
 		EA106968215A4BB100088C45 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA106948215A4BAE00088C45 /* Question.swift */; };
 		EA106969215A4BB100088C45 /* tap.wav in Resources */ = {isa = PBXBuildFile; fileRef = EA10694A215A4BAF00088C45 /* tap.wav */; };
-		EA10696A215A4BB100088C45 /* Ta Da-Sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = EA10694B215A4BAF00088C45 /* Ta Da-Sound.wav */; };
+		EA10696A215A4BB100088C45 /* TaDa-Sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = EA10694B215A4BAF00088C45 /* TaDa-Sound.wav */; };
 		EA10696B215A4BB100088C45 /* QuestionScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA10694D215A4BAF00088C45 /* QuestionScene.swift */; };
 		EA10696C215A4BB100088C45 /* QuestionScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = EA10694E215A4BAF00088C45 /* QuestionScene.sks */; };
 		EA10696E215A4BB100088C45 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = EA106953215A4BAF00088C45 /* GameScene.sks */; };
@@ -85,7 +85,7 @@
 		EA106946215A4BAE00088C45 /* InformationScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InformationScene.swift; sourceTree = "<group>"; };
 		EA106948215A4BAE00088C45 /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		EA10694A215A4BAF00088C45 /* tap.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = tap.wav; sourceTree = "<group>"; };
-		EA10694B215A4BAF00088C45 /* Ta Da-Sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Ta Da-Sound.wav"; sourceTree = "<group>"; };
+		EA10694B215A4BAF00088C45 /* TaDa-Sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "TaDa-Sound.wav"; sourceTree = "<group>"; };
 		EA10694D215A4BAF00088C45 /* QuestionScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionScene.swift; sourceTree = "<group>"; };
 		EA10694E215A4BAF00088C45 /* QuestionScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = QuestionScene.sks; sourceTree = "<group>"; };
 		EA106953215A4BAF00088C45 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -231,7 +231,7 @@
 			isa = PBXGroup;
 			children = (
 				EA10694A215A4BAF00088C45 /* tap.wav */,
-				EA10694B215A4BAF00088C45 /* Ta Da-Sound.wav */,
+				EA10694B215A4BAF00088C45 /* TaDa-Sound.wav */,
 			);
 			path = Sounds;
 			sourceTree = "<group>";
@@ -388,7 +388,7 @@
 				EA88C097215A69DF0025B334 /* LaunchScreen.storyboard in Resources */,
 				84B3E93E215A5351000C6779 /* Information.sks in Resources */,
 				EA88C098215A69DF0025B334 /* Main.storyboard in Resources */,
-				EA10696A215A4BB100088C45 /* Ta Da-Sound.wav in Resources */,
+				EA10696A215A4BB100088C45 /* TaDa-Sound.wav in Resources */,
 				EA10696E215A4BB100088C45 /* GameScene.sks in Resources */,
 				EA106974215A4BB100088C45 /* Actions.sks in Resources */,
 				EA10696C215A4BB100088C45 /* QuestionScene.sks in Resources */,

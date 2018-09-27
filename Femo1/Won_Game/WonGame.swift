@@ -15,6 +15,8 @@ class WonGame: SKScene {
     var starField: SKEmitterNode!
     let userDefaults = UserDefaults.standard
     
+    let wonSound = SKAction.playSoundFileNamed("tap.wav", waitForCompletion: false)
+    
     override func didMove(to view: SKView) {
         
         starField = (self.childNode(withName: "starField") as! SKEmitterNode)
@@ -26,6 +28,7 @@ class WonGame: SKScene {
         celebration.position = CGPoint(x:160, y:320)
         self.addChild(celebration)
         celebration.zPosition = -1
+        self.run(wonSound)
     }
     
     
