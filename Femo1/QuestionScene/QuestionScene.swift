@@ -175,6 +175,8 @@ class QuestionScene: SKScene {
         presentSpaceBoard()
     }
     
+    // https://stackoverflow.com/questions/34293575/is-it-possible-to-use-xcode-ui-testing-on-an-app-using-spritekit
+    
     override func accessibilityElementCount() -> Int {
         initAccessibility()
         return accessibleElements.count
@@ -229,22 +231,6 @@ class QuestionScene: SKScene {
             frameForButton4Text.origin = (view?.convert(frameForButton1Text.origin, from: self))!
             frameForButton4Background.origin = (view?.convert(frameForButton1Background.origin, from: self))!
             
-            // Don't forget origins are different for SpriteKit and UIKit:
-            // - SpriteKit is bottom/left
-            // - UIKit is top/left
-            //              y
-            //  ┌────┐       ▲
-            //  │    │       │   x
-            //  ◉────┘       └──▶
-            //
-            //                   x
-            //  ◉────┐       ┌──▶
-            //  │    │       │
-            //  └────┘     y ▼
-            //
-            // Thus before the following conversion, origin value indicate the bottom/left edge of the frame.
-            // We then need to move it to top/left by retrieving the height of the frame.
-            //
             
             frameForButton1Text.origin.y = frameForButton1Text.origin.y - frameForButton1Text.size.height
             frameForButton1Background.origin.y = frameForButton1Background.origin.y - frameForButton1Background.size.height
