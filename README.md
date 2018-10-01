@@ -128,17 +128,16 @@ I want to be able to play againt the computer
 ## How to use/install
 Download xcode from [here](https://developer.apple.com/xcode/)
 From the comand line 
-- `git clone https://github.com/fabjab86/FEMO.git`
-- `cd FEMO`
-- `open FEMO.xcodeproj`
-
-On the left side of the project pane [pic](projectFiles.png)
-Pull the FEMO.app icon on to your laptop screen and open it to start playing the game  
+- `git clone https://github.com/fabjab86/FEMO1.git`
+- `cd FEMO1`
+- `open FEMO1.xcodeproj` 
+- Top left corner select iPhone SE
+- Then click on the play button 
 
 ## Boards and blogs
 [Trello](https://trello.com/b/NeNjHIRE/bejewellled-code-app)
 
-[Medium](https://medium.com/teamfemo)
+[Medium](https://blog.makersacademy.com/week-1-final-project-at-makers-9702a828cae5)
 
 [Previous Repo](https://github.com/fabjab86/FEMO)
 
