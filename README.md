@@ -139,7 +139,7 @@ From the comand line
 
 [Medium](https://blog.makersacademy.com/week-1-final-project-at-makers-9702a828cae5)
 
-[Previous Repo](https://github.com/fabjab86/FEMO)
+[Previous Repo](https://github.com/Mschmidt19/FEMO)
 
 ## Collaborators
 Eunbit Evie Kim, Farah Jabri, Olivia Brady, Marek Schmidt
